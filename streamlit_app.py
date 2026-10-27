@@ -1,74 +1,63 @@
 import streamlit as st
-import math, json
 
-st.set_page_config(page_title="IR BATIK GUARD 8-in-1", layout="wide", page_icon="🦇")
+st.set_page_config(page_title="IR BATIK GUARD - Prototype Robotics 20x110M", layout="wide")
 
-st.title("🦇 IR SUPER USEFUL BATIK GUARD 8-in-1")
-st.subheader("20x110M Autonomous Factory - Team 1409646471324297 - AIchaliveret")
-st.caption("Muse Spark Open 1026 + Modal + SAM 3.1 | 192.168.4.1 laptop & 192.168.4.22 HP meta.aichaliveret")
+st.title("🏭 IR BATIK GUARD 8-in-1 - Prototype Robotics Pabrik Batik 20Mx110M")
+st.subheader("Semua Instalasi Pipa Galvalum+Stainless 2-3cm → Tabung Cattler → Generator DC | Controllable HP & Laptop WiFi+Internet")
 
 col1, col2, col3 = st.columns(3)
-
-with col1:
-    st.markdown("### 1. Tongkat Plakin TCS34725 Bug No2")
-    r1 = st.slider("R current", 0, 255, 200)
-    g1 = st.slider("G current", 0, 255, 180)
-    b1 = st.slider("B current", 0, 255, 50)
-    r_ref = st.number_input("R ref kuning emas", value=210)
-    g_ref = st.number_input("G ref", value=190)
-    b_ref = st.number_input("B ref", value=60)
-    delta_e = math.sqrt(sum((a-b)**2 for a,b in zip([r1,g1,b1],[r_ref,g_ref,b_ref]))) / 441.672 * 100
-    st.metric("Delta E CIE76", f"{delta_e:.2f}")
-    if delta_e > 10:
-        st.error("ALARM MERAH - Trigger IPAL + HP")
-        led = "🔴 Merah"
-    elif delta_e > 5:
-        st.warning("SIAGA - Kuning")
-        led = "🟡 Kuning"
-    else:
-        st.success("AMAN - Hijau")
-        led = "🟢 Hijau"
-    st.info(f"Switch Board 4 LED: {led} | 120 observasi 10 detik celup")
-
-with col2:
-    st.markdown("### 2. IMX219 8MP Gudang Kimia")
-    st.text("Stock detection SAM 3.1 text prompt")
-    hx_50 = st.slider("HX711 50kg Dacin (kg)", 0.0, 50.0, 23.5)
-    hx_5 = st.slider("HX711 5kg 0.1gr (kg)", 0.0, 5.0, 2.45)
-    st.metric("Naphthol A soda api dimasak api", f"{hx_50} kg - {'AMAN' if hx_50>5 else 'ISI ULANG'}")
-    st.metric("Naphthol B nitrit+air keras", f"{hx_5} kg")
-    st.caption("Reaktif, AS, AS-BO, AS-BS, Fast salts Merah Menyala, Biru Navy")
-
-with col3:
-    st.markdown("### 3. MLX90640 + Thermal Battery")
-    mlx_max = st.slider("MLX90640 max °C", 0, 150, 95)
-    co2 = st.slider("NDIR CO2 ppm", 0, 3000, 800)
-    nox = st.slider("MQ-135 NOx ppm", 0, 500, 120)
-    if mlx_max > 90:
-        st.error(f"THERMOSIPHON: UAP PERTAMA TEKAN TABUNG A -> DORONG KE KOLAM ({mlx_max}°C)")
-    elif mlx_max > 60:
-        st.warning("THERMOSIPHON AKTIF - Panas naik dingin turun")
-    st.metric("Tabung A 500L dingin bersih", "OK")
-    st.metric("Tabung B Kettle Uap 500L 2 Ruang Pluit 2.5bar 90kg/jam", f"{mlx_max}°C")
-    st.metric("IPAL Cerobong 12M", "TRIGGER SCRUBBER" if co2>1500 else "NORMAL Hitam->Putih tipis")
+col1.metric("Lahan", "20x110=2200m²", "SCALE 1:200")
+col2.metric("Gate", "6M [7+6+7]", "GSB 10M")
+col3.metric("Status", "Robotik Otomatis", "WiFi 192.168.4.1/.22")
 
 st.divider()
-st.markdown("### 4. Generator 2000-4000W + 14 CCTV + RAB")
-c4, c5, c6 = st.columns(3)
-c4.metric("Turbine Francis", "E=-N dΦ/dt Lenz", "MORE THRUST=MORE POWER")
-c4.metric("Thermal Battery 500L", "07:00-17:00 + lembur 17:00-19:00 ATS PLN")
-c5.metric("14 CCTV", "Cetak 4 Jemuran 4 Halaman 2 Security 24H Naphthol 2 Generator")
-c5.metric("PIR cold only Face hot only", "Log jam kerja")
-c6.metric("RAB Total", "Rp 1.478.500.000")
-c6.metric("Floor Plan", "20x110M=2200m² Gate 6M tengah (7+6+7) GSB 10M")
+st.header("🔧 Semua Instalasi Pipa - Galvalum + Stainless 2-3cm Campuran")
+c1, c2 = st.columns(2)
+with c1:
+    st.info("**Pipa Galvalum 2-3cm Ø (Abu-abu)**\n\n- Besi campuran zinc-aluminium harga murah\n- Diameter 2cm cabang, 3cm main line 94M\n- Jalur dingin: KOLAM → KUALI MASAK 90x70 346L → TABUNG CATTLER Bawah Tabung A 500L vacuum\n- Garis abu-abu putus-putus — — —")
+with c2:
+    st.info("**Pipa Stainless SS304 2-3cm Ø (Silver)**\n\n- Food grade tahan panas 800°C inside / 315°C outside\n- Tahan uap 2.5 bar 90kg/jam\n- Jalur panas: TABUNG CATTLER Atas Tabung B 500L kettle uap → GENERATOR Turbine Francis\n- Garis silver tebal ═══")
 
-st.json({
-    "team_id": "1409646471324297",
-    "model": "meta-models/muse-spark-open-1026",
-    "delta_e": round(delta_e,2),
-    "status": led,
-    "mesh": "5 NODES 192.168.4.1 & 192.168.4.22",
-    "modal_endpoint": "https://1409646471324297--batik-guard-muse-spark-open-1026-analyze-batik.modal.run"
-})
+st.divider()
+st.code("""
+KOLAM (8 unit) + KUALI MASAK 90x70 346L → 173L (Api besar 8 jam + Kayu Bakar Tungku Lilin 2 Units)
+   ↓ Pipa Galvalum 2-3cm Ø abu-abu jalur dingin
+TABUNG CATTLER (KETTLE) 500L Bawah = Tabung A air dingin bersih SS304 vacuum insulated
+   ↓ Thermosiphon hot rises cold falls NO MOTOR 135W steam pump like
+TABUNG CATTLER Atas = Tabung B kettle uap 2 Ruang Partition Pluit 2.5 bar 90kg/jam
+   ↓ Pipa Stainless 2-3cm Ø silver jalur panas
+GENERATOR Turbine Francis magnets+copper E=-N dΦ/dt Faraday Lenz ε=-dΦ/dt DC 12V/24V/48V
+   ↓ Orange SS304 + Relay valve COM-NO ESP32-S3 SHT41 MLX90640
+Thermal Battery 500L 07:00-17:00 + lembur 17:00-19:00 ATS PLN no LiFePO4 → RUANG CETAK 10 Kompor DC
+""", language="text")
 
-st.caption("Deploy: streamlit run streamlit_app.py | Modal: modal deploy app.py | Kitab Komplit 11 tabs inside repo")
+st.divider()
+st.header("⚡ Instalasi Listrik DC - Belum AC")
+st.warning("""
+- Semua DC dari Generator 2000-4000W (2-4x1000W) → Thermal Battery 500L ATS PLN no LiFePO4 explosion
+- 10 Kuali Cetak Ø45cm C110 3mm 65-115W induction 20k flip/sec eddy current DC 48V
+- Relay COM NC NO coil armature spring safety
+- Switch Board 4 LEDs blue green yellow red status kuali
+- ESC 6 MOSFETs 3 phases A B C reverse as generator MORE SWITCHING=MORE THRUST
+- Merah listrik AC/DC generator only for small stoves not 4 large kuali danger
+""")
+
+st.divider()
+st.header("📡 Controllable via WiFi + Internet - HP & Laptop - Prototype Robotik")
+st.write("ESP32-S3 mesh WiFi SSID meta.aichaliveret - Laptop: 192.168.4.1 - HP: 192.168.4.22 - 5 nodes")
+st.write("Dashboard sensor 8 items + CCTV 14 feed + jam kerja 07:00-19:00 anti maling security 24H")
+
+if st.button("Test Control Kuali 1 ON via WiFi DC"):
+    st.success("✅ Kuali 1 ON via 192.168.4.1 laptop - Relay COM-NO closed - Induction 75W - DC 48V - Pipa Stainless 2-3cm → Cattler → Generator")
+
+if st.button("Test Pipa Galvalum+Stainless 2-3cm → Cattler"):
+    st.success("✅ Alur: KOLAM → Galvalum 2-3cm abu-abu → CATTLER Bawah → Thermosiphon → CATTLER Atas → Stainless 2-3cm silver → GENERATOR DC 2.5 bar 90kg/jam")
+
+st.divider()
+st.header("📍 Site Plan - Ikutin Foto Tangan Lo")
+st.info("TEMPAT ISTIRAHAT, MESS x3, KOLAM x8, RUANG CETAK 10 MEJA 10 KOMPOR LISTRIK, TAMAN, FILTER DRAINASE PARKIR MOTOR 10M, MEJA KRIWILAN WATER GLASS, GENERATOR TABUNG KETTLE, KUALI MASAK, KAYU BAKAR TUNGKU LILIN 2 UNITS, SOLFITE 2Mx2M, AIR MASIN 2M•4M•4M, CELAP WARNA NAPTOL REACTIVE 8M, GUDANG KECIL MEJA KRIW 4M, GUDANG BESAR 2+2M 22M, HALAMAN JEMURAN, RUANG JEMURAN 50M 8M, KANTOR 4Mx6M RAK, CAR PARK, TRUCK PARK, PINTU GERBANG, ACCESS ROAD 20M")
+
+st.link_button("Buka Floor Plan Interaktif (GitHub Pages)", "https://aichaliveret.github.io/batik-guard-8in1/")
+
+st.divider()
+st.caption("Team 1409646471324297 AIchaliveret - Prototype Robotics Pabrik Batik 20x110M = 2200M² - Semua instalasi pipa galvalum+stainless 2-3cm campuran → tabung cattler → generator DC - Controllable HP & Laptop WiFi+Internet")
