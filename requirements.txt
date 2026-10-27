@@ -1,0 +1,9 @@
+modal
+fastapi[standard]
+transformers
+torch
+Pillow
+numpy
+colormath
+python-multipart
+fireworks-ai
