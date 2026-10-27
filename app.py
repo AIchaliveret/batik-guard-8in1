@@ -1,96 +1,65 @@
+
+"""
+IR BATIK GUARD 8-in-1 - Prototype Robotics Pabrik Batik 20x110M
+Semua instalasi pipa galvalum+stainless 2-3cm -> tabung cattler -> generator DC
+Controllable via WiFi + Internet - HP & Laptop
+Team 1409646471324297 AIchaliveret
+"""
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 import modal
 
-app = modal.App("batik-guard-muse-spark-open-1026")
+app = FastAPI(title="IR Batik Guard 8-in-1 - Prototype Robotics", version="1.0")
 
-# Image dengan semua deps buat TCS34725 + IMX219 + MLX90640 + HX711
-image = modal.Image.debian_slim().pip_install(
-    "fastapi[standard]",
-    "transformers",
-    "torch",
-    "Pillow",
-    "numpy",
-    "colormath",
-    "python-multipart"
-)
+app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"])
 
-# System prompt Batik Guard - Agentic 8-in-1
-SYSTEM_PROMPT = """
-Kamu adalah IR SUPER USEFUL BATIK GUARD 8-in-1 untuk pabrik 20x110M di Cerebral Valley.
+# Mock sensor data - ESP32-S3 mesh 192.168.4.1 laptop / 192.168.4.22 HP
+SENSORS = {
+    "esp32_mesh": {"laptop": "192.168.4.1", "hp": "192.168.4.22", "ssid": "meta.aichaliveret", "nodes": 5},
+    "sht41": {"temp": 28.4, "humidity": 68, "location": "Ruang Cetak + Jemuran"},
+    "mlx90640": {"kuali_temp": 92, "resolution": "32x24", "range": "60-120C"},
+    "hx711_5kg": {"weight": 2.45, "precision": "0.1gr", "raw_vs_after": "Delta"},
+    "hx711_50kg": {"weight": 12.5, "dacin": True, "imx219_photo": True},
+    "imx219": {"mp": 8, "colorimeter": "5500K", "face_detection": "hot rooms only"},
+    "ndir_co2": {"co2": 412, "channels": 4, "safe": True},
+    "mq135_nox": {"nox": 12, "alarm": ">50ppm", "cerobong": "12M SS304"},
+    "pipa": {
+        "galvalum_2cm": "abu-abu jalur dingin KOLAM->KUALI->CATTLER Bawah",
+        "galvalum_3cm": "abu-abu main line 94M",
+        "stainless_2cm": "silver jalur panas CATTLER Atas->GENERATOR",
+        "stainless_3cm": "silver uap 2.5bar 90kg/jam -> Thermal Battery",
+        "campuran": "galvalum+stainless 2-3cm lari ke tabung cattler lalu generator DC"
+    },
+    "cattler": {"type": "Kettle Uap 500L 2 Ruang Pluit", "pressure": "2.5 bar", "flow": "90kg/jam", "thermosiphon": "135W no motor hot rises cold falls", "tabung_a": "Air dingin bersih 500L SS304 vacuum", "tabung_b": "Kettle uap 500L"},
+    "generator": {"type": "Turbine Francis magnets+copper", "formula": "E=-N dΦ/dt Faraday Lenz ε=-dΦ/dt", "power": "1000W each x2-4 = 2000-4000W", "dc": "12V/24V/48V DC murni belum AC", "esc": "6 MOSFETs 3 phases A B C reverse MORE SWITCHING=MORE THRUST"},
+    "cctv": {"total": 14, "cetak": 4, "jemuran": 4, "halaman_depan": 2, "naphthol": 2, "generator": 2}
+}
 
-Hardware:
-- ESP32-S3 + IMX219 Colorimeter 8MP 5500K + HX711 5kg 0.1gr + HX711 50kg + SHT41 + MLX90640 32x24 thermal + NDIR CO2 4-ch + MQ-135 NOx
-- Tongkat Plakin TCS34725 Bug No2: deteksi gradasi kuning Indanthrene + Water Glass, 120 observasi kuning celup 10 detik, Delta E >10% alarm merah HP
-- IPAL 3-stage + Cerobong 12M SS304 800C Cyclone+Scrubber+Spark
+@app.get("/")
+def root():
+    return {"message": "IR BATIK GUARD 8-in-1 Prototype Robotics 20x110M", "status": "Pabrik Batik Robotik WiFi+Internet HP+Laptop", "team": "1409646471324297"}
 
-Tugas agentic kamu:
-1. Analisa warna dari IMX219: hitung Delta E CIE76/Lab untuk kuning muda->tua Indanthrene, deteksi gradasi tidak beraturan
-2. Jika Delta E >10% -> trigger alarm merah + log ke IPAL
-3. Baca stok gudang kimia: Naphthol A (soda api dimasak api), Naphthol B (nitrit+air keras HCl/H2SO4), Reaktif
-4. Thermal mapping MLX90640 untuk komporisasi + 2 Tabung Vakum Thermosiphon
-5. Beri instruksi operator via 4 LED Switch Board: Biru=Air, Hijau=Aman, Kuning=Siaga, Merah=Alarm
+@app.get("/sensors")
+def get_sensors():
+    return SENSORS
 
-Jawab dalam format JSON: {"delta_e": float, "status": "AMAN/SIAGA/ALARM", "instruksi_led": "...", "stok": {...}, "co2_ppm": int}
-"""
+@app.get("/pipa")
+def get_pipa():
+    return {"galvalum_stainless_2_3cm": SENSORS["pipa"], "flow": "KOLAM->KUALI 90x70 346L->CATTLER Bawah->CATTLER Atas->GENERATOR DC->Thermal Battery->Ruang Cetak 10 Kompor DC"}
 
-@app.function(image=image, gpu="T4", timeout=120)
-@modal.web_endpoint(method="POST", docs=True)
-def analyze_batik(data: dict):
-    """
-    Endpoint utama buat ESP32-S3 mesh 5 nodes
-    POST ke: https://<team-id>--batik-guard-muse-spark-open-1026-analyze-batik.modal.run
-    Body: {"rgb": [r,g,b], "rgb_ref": [r,g,b], "sht41": {"temp": 32.5, "hum": 65}, "mlx90640_max": 115, "hx711_5kg": 2.45, "hx711_50kg": 23.5, "co2": 800, "nox": 120}
-    """
-    import math
+@app.get("/control/{device}/{action}")
+def control_device(device: str, action: str):
+    # Controllable via WiFi + Internet - HP & Laptop
+    return {"device": device, "action": action, "via": "WiFi mesh 192.168.4.1 laptop / 192.168.4.22 HP meta.aichaliveret", "relay": "COM-NC-NO coil armature spring safety", "dc": True}
 
-    # Hitung Delta E sederhana dari TCS34725/IMX219
-    rgb = data.get("rgb", [200, 180, 50])
-    rgb_ref = data.get("rgb_ref", [210, 190, 60])
-    
-    # Delta E CIE76 approximated dari RGB
-    delta_e = math.sqrt(sum((a-b)**2 for a,b in zip(rgb, rgb_ref))) / 441.672 * 100
-    
-    status = "AMAN"
-    led = "Hijau"
-    if delta_e > 10:
-        status = "ALARM MERAH"
-        led = "Merah"
-    elif delta_e > 5:
-        status = "SIAGA"
-        led = "Kuning"
+# Modal deploy
+modal_app = modal.App("batik-guard-8in1")
 
-    # Logic Thermal untuk Tabung Vakum
-    mlx_max = data.get("mlx90640_max", 0)
-    thermosiphon = "IDLE"
-    if mlx_max > 90:
-        thermosiphon = "UAP PERTAMA TEKAN TABUNG A -> DORONG KE KOLAM"
-    elif mlx_max > 60:
-        thermosiphon = "THERMOSIPHON AKTIF - PANAS NAIK DINGIN TURUN"
+@modal_app.function(image=modal.Image.debian_slim().pip_install(["fastapi","uvicorn"]))
+@modal.asgi_app()
+def fastapi_app():
+    return app
 
-    # IPAL check
-    co2 = data.get("co2", 0)
-    iPal_trigger = co2 > 1500
-
-    return {
-        "team_id": "1409646471324297",
-        "model": "meta-models/muse-spark-open-1026 (Muse Spark Open / Glimmer proxy)",
-        "delta_e": round(delta_e, 2),
-        "status": status,
-        "instruksi_led": led,
-        "instruksi_switch_board": f"LED {led} - {status}",
-        "thermosiphon_status": thermosiphon,
-        "stok_gudang": {
-            "naphthol_a_soda_api": "AMAN" if data.get("hx711_50kg", 0) > 5 else "ISI ULANG",
-            "naphthol_b_nitrit": "AMAN",
-            "reaktif": "CEK IMX219"
-        },
-        "ipal_cerobong_12m": "TRIGGER SCRUBBER" if iPal_trigger else "NORMAL - HITAM->PUTIH TIPIS",
-        "relay_com_nc_no": "STOP OTOMATIS" if mlx_max >= 100 else "JALAN",
-        "mesh": "5 NODES ONLINE -> 192.168.4.1 laptop & 192.168.4.22 HP meta.aichaliveret"
-    }
-
-@app.function(image=image)
-@modal.web_endpoint(docs=True)
-def health():
-    return {"status": "BATIK GUARD ONLINE", "team": "1409646471324297", "model": "muse-spark-open-1026", "ipal": "3-stage + 12M SS304", "pabrik": "20x110M=2200m2"}
-
-# Untuk run lokal: python -m modal run app.py
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=8000)
