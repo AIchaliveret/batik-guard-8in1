@@ -53,7 +53,26 @@ with tab1:
         **Access Pick Up Carry Kayu Bakar**: via Pintu Depan Besar Utama - No side door
         **Skala 1:200**: 1cm drawing = 2M real - PDF ready for jury
         """)
-        st.image("https://via.placeholder.com/800x400?text=Floor+Plan+1:200+20x110M+Gate+6M+GSB+10M", use_column_width=True)
+        # FIXED: Embed FINAL 2D+3D+RAB SYSTEM - Denah 2D + 3D Design Grafis Architecture + RAB Teknik Sipil
+        try:
+            with open("denah_2d_3d_rab_final.html", "r", encoding="utf-8") as f:
+                html = f.read()
+            st.components.v1.html(html, height=900, scrolling=True)
+        except FileNotFoundError:
+            st.warning("denah_2d_3d_rab_final.html not found - showing fallback")
+            st.image("https://via.placeholder.com/800x400?text=Floor+Plan+1:200+20x110M+Gate+6M+GSB+10M", use_column_width=True)
+
+        st.markdown("---")
+        st.subheader("💰 RAB Teknik Sipil - Quick View")
+        st.markdown("""
+        **RAB Pabrik Batik 2200m2 Final - Piping Galvalum Mix Stainless 94M + Orange SS304 800C**
+        - Site 20x110M + Tungku 2 besar + 2 sedang + 2 kayu bakar
+        - Kuali 500-1000L Ø1.2M + 10x Ø45cm tembaga C110 + Pematangan 90x70 346L->173L
+        - Generator France Turbo Turbine Francis E=-N dΦ/dt 2.5bar 90kg/jam 2000-4000W
+        - IPAL 10x8x3M 4 stage eco + Cerobong 12M SS304 Cyclone Scrubber
+        - Full RAB ada di Tab 3D + 2D Final HTML di atas (Tab 3: RAB Teknik Sipil)
+        """)
+
     with col2:
         st.markdown("### Dimensi Kunci")
         st.json({
