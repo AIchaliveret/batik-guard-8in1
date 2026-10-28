@@ -1,111 +1,143 @@
+"""
+Streamlit App - IR SUPER BATIK GUARD 8-in-1 Dashboard
+One Platform for Smarter Batik Buildings (ala Tuya B2B)
+Repo: Alchaliveret/batik-guard-8in1
+Live: https://alchaliveret.github.io/batik-guard-8in1/
+"""
 
 import streamlit as st
-import pandas as pd
-import time
+import json
 from datetime import datetime
 
-st.set_page_config(page_title="IR BATIK GUARD 8-in-1 - 20x110M Autonomous", layout="wide", page_icon="🏭")
+st.set_page_config(
+    page_title="IR SUPER BATIK GUARD 8-in-1 - 20x110M",
+    page_icon="🏭",
+    layout="wide",
+    initial_sidebar_state="expanded"
+)
 
-st.title("🏭 IR BATIK GUARD 8-in-1 - 20Mx110M = 2200M² Robotic Autonomous Factory")
-st.subheader("Pipa Galvalum+Stainless 2-3cm → Cattler → Generator France Turbo → 10 Kompor Tembaga DC")
+# Sidebar - Like Tuya B2B Platform
+st.sidebar.title("🏭 Batik Guard 8-in-1")
+st.sidebar.markdown("**20M x 110M = 2200m² Autonomous**")
+st.sidebar.markdown("---")
+st.sidebar.markdown("### 📡 ESP32-S3 Mesh")
+st.sidebar.success("192.168.4.1 Laptop ✅")
+st.sidebar.success("192.168.4.22 HP meta.aichaliveret ✅")
+st.sidebar.markdown("### 🔋 Energy")
+st.sidebar.metric("Tabung A Cold", "58%", "320 L/min")
+st.sidebar.metric("Tabung B Steam", "58%", "2.5 bar")
+st.sidebar.metric("Generator", "1000W x 4", "2000-4000W total")
+st.sidebar.markdown("### 📹 14 CCTV")
+st.sidebar.info("Cetak 4 | Jemuran 4 | Halaman 2 | Naphthol 2 | Generator 2")
 
-col1, col2, col3 = st.columns(3)
-col1.metric("Kuali Raksasa", "500-1000L", "Ø1.2M x 90cm")
-col2.metric("Tungku", "4 Units", "2 Besar + 2 Sedang")
-col3.metric("Generator DC", "2000-4000W", "12/24/48V France Turbo")
+# Main
+st.title("IR SUPER BATIK GUARD 8-in-1 - Control Office 4x6M")
+st.markdown("**One Platform for Smarter Batik Buildings | Tuya-style but for Batik | Muse Spark Multimodal: IMAGES + VIDEO + TEXT + DOCS**")
 
-st.divider()
-
-# ESP32-S3 Mesh Status
-st.markdown("### 📡 ESP32-S3 Mesh 5 Nodes - WiFi SSID meta.aichaliveret")
-c1, c2, c3 = st.columns(3)
-c1.code("Laptop: 192.168.4.1")
-c2.code("HP: 192.168.4.22")
-c3.success("Status: ONLINE - Manual & Otomatis via Meta AI")
-
-# Tabs
-tab1, tab2, tab3, tab4, tab5 = st.tabs(["🔥 Tungku & Kuali", "⚡ Generator France", "🍳 10 Kompor Tembaga", "📐 RAB Sipil", "🤖 AI Meta Detection"])
+# Tabs like in index.html
+tab1, tab2, tab3, tab4, tab5 = st.tabs(["📐 Floor Plan 1:200", "🎨 Chemical 25 Kodi", "🔥 Kuali & No Motor Water", "📊 Sensor Live", "🤖 Model API"])
 
 with tab1:
-    st.markdown("""
-    #### 2 Tungku Raksasa Api Besar + 2 Tungku Sedang Api Sedang
-    - **Fungsi:** Matangkan lilin parafin + siongka
-    - **Kuali:** 500L s/d 1000L Ø1.2M tinggi 90cm-1M, 30x masak/hari = 600 lembar kain
-    - **Kayu Bakar:** 2 Units eco kayu limbah, Cerobong 12M SS304 800°C
-    - **Piping:** Galvalum abu-abu murah jalur dingin KOLAM→KUALI 90x70 346L→CATTLER Bawah Tabung A 500L vacuum
-    - **Eco:** Api tidak kebuang → uap → listrik → 50% time saved lapangan jemur 25m vs 50m old
-    """)
-    st.dataframe(pd.DataFrame([
-        {"Tungku": "Besar #1", "Api": "8 jam", "Kapasitas": "1000L", "Fungsi": "Lorodan parafin+siongka"},
-        {"Tungku": "Besar #2", "Api": "8 jam", "Kapasitas": "1000L", "Fungsi": "Lorodan parafin+siongka"},
-        {"Tungku": "Sedang #1", "Api": "4 jam", "Kapasitas": "500L", "Fungsi": "Matang lilin daur ulang"},
-        {"Tungku": "Sedang #2", "Api": "4 jam", "Kapasitas": "500L", "Fungsi": "Matang lilin + siongka"},
-    ]))
+    st.subheader("FLOOR PLAN 1:200 - 20M x 110M = 2200M² - Ruler Every Side")
+    col1, col2 = st.columns([3,1])
+    with col1:
+        st.markdown("""
+        **Gate 6M [7+6+7]**: 7M pagar + 6M gerbang + 7M pagar, simetris
+        **GSB 10M**: dari jalan, **Taman Depan 10M**: filter debu + aesthetic + buffer anti maling + CCTV Halaman Depan 2 Security 24H
+        **Gudang Besar 22M**: muat 10 kuali cetak Ø45cm + kuali pematangan 90x70
+        **Gudang Kecil Kimia**: Reaktif, Naphthol A soda api dimasak, Naphthol B nitrit+air keras, Indanthrene + Water Glass gradasi kuning irregular
+        **Kantor 4x6M = 24m²**: server ESP32-S3 mesh
+        **Lapang Jemuran Pelangi 50M**: warna pelangi + CCTV Jemuran 4 + SHT41 + MLX90640
+        **IPAL 10x8x3M**: filtrasi multi-layer + Clean water 2x2x1.5
+        **Cerobong 12M**: SS304 800C inside Galvalum 315C outside Cyclone + Scrubber + Secondary + Spark black->white thin
+        **Access Pick Up Carry Kayu Bakar**: via Pintu Depan Besar Utama - No side door
+        **Skala 1:200**: 1cm drawing = 2M real - PDF ready for jury
+        """)
+        st.image("https://via.placeholder.com/800x400?text=Floor+Plan+1:200+20x110M+Gate+6M+GSB+10M", use_column_width=True)
+    with col2:
+        st.markdown("### Dimensi Kunci")
+        st.json({
+            "Total Lahan": "20M x 110M = 2200m²",
+            "Gate Utama": "6M tengah [7+6+7]",
+            "GSB": "10M dari jalan",
+            "Taman Depan": "10M filter debu",
+            "Gudang Besar": "22M",
+            "Kantor": "4x6M = 24m²",
+            "Jemuran": "50M pelangi",
+            "IPAL": "10x8x3M",
+            "Cerobong": "12M"
+        })
 
 with tab2:
+    st.subheader("Formula 25 Kodi = 500 Lembar x 200cm Paparan 40-60%")
     st.markdown("""
-    #### Tabung Tube Air Bersih → Uap → Kettle → Generator France Turbo
-    - **Tabung Cattler 500L 2 Ruang Partition Pluit:** 2.5 bar 90kg/jam
-    - **Stainless SS304 silver food grade:** tahan 800°C inside / 315°C outside, jalur panas CATTLER Atas Tabung B → GENERATOR
-    - **Turbine Francis magnets+copper:** E=-N dΦ/dt Faraday Lenz ε=-dΦ/dt DC 12/24/48V 2000-4000W
-    - **ESC 6 MOSFETs 3 phases A B C reverse MORE SWITCHING=MORE THRUST throttle=steam pressure 2.5 bar**
-    - **Thermosiphon:** hot rises cold falls 135W no motor, First steam pressure presses Tabung A dorong air bersih tanpa motor
-    - **Thermal Battery 500L:** 07:00-17:00 + lembur 17:00-19:00 ATS PLN no LiFePO4 safe
+    **Naphthol AS variants**: AS, AS-BO, AS-BS, AS-G, AS-OL, AS-D, AS-RL, AS-BG, AS-TR + Fast salts
+    - AS + Fast Red B = Merah Menyala Sido Mukti
+    - AS-BO + Fast Red B = Maroon Sogan
+    - AS-BS + Fast Blue BB = Biru Navy Pekalongan
+    - AS-G + Fast Yellow GC = Kuning Emas 120 observasi
+    - Total 25 kodi: Naphthol 6kg, NaOH 6L, NaNO2 3kg, HCl 8L, Garam Diazo 10kg
+    **Reactive**: Yellow, Scarlet, Navy, Red Velvet, Green + Water Glass
+    **Lorodan**: Soda Ash 30-50gr/L 90-100C + Solfite vs Kaporit
+    **Lilin**: Parafin 60% 52-56C Micro 20% Siongkha 15% Beeswax 5% reform 40%/35%/15%/10% melting 65-68C anti 11-14 sun water <0.5% gravimetry
     """)
-    st.metric("Listrik DC Output", "48V", "2000-4000W untuk 10 Kompor")
 
 with tab3:
-    st.markdown("""
-    #### 10 Kompor Listrik Tembaga C110 3mm untuk 10 Meja Cetak Tukang Cetak
-    - **Upgrade:** Tradisional → Prototype Robotic Autonomous
-    - **Element:** Tembaga C110 3mm 65-115W induction 20k flip/sec eddy current DC 48V
-    - **Safety:** Relay COM-NC-NO Orange SS304 valve, MLX90640 auto-stop >115°C, Switch Board 4 LEDs blue green yellow red
-    - **Piping:** 2cm cabang 3cm main line 94M → Ruang Cetak + Tungku Kecil Water Glass Indentren Pewarnaan Gradasi
-    - **Fungsi ganda pipa uap panas:** (1) generate listrik, (2) percepat air panas masak kain berlilin
-    """)
-    st.dataframe(pd.DataFrame([{"Meja": f"Meja #{i+1}", "Kompor": f"Kompor Tembaga #{i+1}", "Daya": "65-115W", "Status": "DC 48V Ready"} for i in range(10)]))
+    st.subheader("Kuali & No Motor Water System - 2 Tabung Vakum")
+    colA, colB = st.columns(2)
+    with colA:
+        st.metric("Kuali Cetak", "10x Ø45cm", "65-115W induction 20kHz")
+        st.metric("Kuali Pematangan", "90x70", "346L -> 173L 50% susut")
+        st.metric("Water Content", "40% -> 0%", "foam rubber")
+    with colB:
+        st.metric("Tabung A Cold", "500L", "58% - Clean")
+        st.metric("Tabung B Steam", "500L 2 Ruang", "2.5 bar 90kg/h")
+        st.success("No Motor Water: First steam presses Tabung A -> Kolam 320L/min - Zero 135W pump")
+    st.markdown("**Thermosiphon**: panas naik dingin turun, passive, Relay COM-NC-NO, stop otomatis via SHT41 MLX90640")
 
 with tab4:
-    st.markdown("""
-    #### Desain Grafis Arsitektur + RAB Teknik Sipil Full 20x110M
-    - **IPAL 10x8x3M:** Grease 1.5³ lilin + Neutral 2x2x1.5 soda api + Filtration 10x8x3M multi-layer arang pasir ijuk + Clean 2x2x1.5
-    - **Taman Filter:** 🌳🌳🌳 filter alami debu+bau, Filter Drainase Parkir Motor 10M 3-stage eco NDIR+MQ135 IR detect mampet & bau AI Meta
-    - **Instalasi Listrik:** AC PLN + DC Generator France → 10 Kompor Tembaga
-    - **Gate:** 6M [7+6+7] GSB 10M, Taman 10M buffer, Cerobong 12M SS304
-    - **Floor Plan:** Lapangan Jemur moved to middle 25m path vs 50m old 50% time saved lapang sirkulasi udara & cahaya
-    - **Manufacturing:** Factory Manager 200 kodi/week Tanah Abang/Cipulir 300 kodi Lebaran avg 150 kodi + CMT + SCM direct vs forwarding Pekalongan/Jatim/Jogja
-    """)
-    st.dataframe(pd.DataFrame([
-        {"Item": "Foundation + Drainase PVC IPPAL 110mm", "Vol": "2200m²", "Harga": "Rp 120jt"},
-        {"Item": "IPAL 10x8x3M 4 stage", "Vol": "1 unit", "Harga": "Rp 85jt"},
-        {"Item": "Tungku Besar 2 + Sedang 2 + Kayu Bakar 2", "Vol": "6 unit", "Harga": "Rp 45jt"},
-        {"Item": "Tabung Cattler 500L 2 Ruang + Kuali 500-1000L", "Vol": "3 unit", "Harga": "Rp 95jt"},
-        {"Item": "Piping Galvalum+Stainless 2-3cm 94M + France Turbo Generator 4kW", "Vol": "1 set", "Harga": "Rp 150jt"},
-        {"Item": "10 Kompor Tembaga C110 + 10 Meja Cetak", "Vol": "10 set", "Harga": "Rp 80jt"},
-        {"Item": "ESP32-S3 5 nodes + TCS34725 + IMX219 + NDIR 4 + MLX90640 + CCTV 14", "Vol": "1 set", "Harga": "Rp 35jt"},
-    ]))
+    st.subheader("Sensor Live - IR SUPER BATIK GUARD 8-in-1")
+    c1, c2, c3, c4 = st.columns(4)
+    c1.metric("TCS34725 Bug No2", "120 obs", "Delta E 12%")
+    c2.metric("IMX219 Gudang Kecil", "8MP 5500K", "Reactive low")
+    c3.metric("HX711 5kg", "0.1gr", "5gr Naphthol")
+    c4.metric("MLX90640", "32x24", "45C shade alarm")
+    c1.metric("SHT41", "±0.2C", "RH 65%")
+    c2.metric("NDIR CO2", "800 ppm", "fermentation check")
+    c3.metric("MQ-135 NOx", "30 ppm", "Safe <50ppm")
+    c4.metric("Thermal Battery", "500L", "07:00-19:00")
+    st.json({
+        "Naphthol": "45.2 mg/L Safe",
+        "Reactive": "22.8 mg/L Normal",
+        "Indanthrene": "18.5 mg/L Normal",
+        "Labor": "08:42 Budi S. active 12 authorized",
+        "CCTV": "14 nodes REC"
+    })
 
 with tab5:
+    st.subheader("Model API - Muse Spark Open - Multimodality")
     st.markdown("""
-    #### 🤖 All Safety Dikendalikan Meta AI via ESP32 Laptop & HP
-    - **Sensors:** TCS34725 Bug No2 colorimetry 120-point Delta E, IMX219 8MP chemical vision (Naphthol A soda api, Naphthol B nitrit+HCl/H2SO4), MLX90640 32x24 thermal mapping, NDIR 4ch CO2 + MQ-135 NOx, SHT41 temp/humidity, HX711 5kg+50kg, SCT-013 current
-    - **AI Stack:** Muse Spark Open (meta-models/muse-spark-open-1026) on Modal Endpoints + Baseten $100 + Fireworks Glimmer 30B SFT, Muse Wonder Context 1M Chat via dev.meta.ai, SAM 3.1 Segment text prompt "kuning Indanthrene irregular"
-    - **Meta AI App:** 192.168.4.22 meta.aichaliveret face detection hot rooms only, PIR cold only, log jam kerja 14 CCTV
-    - **Guard:** Deterministic guard like IBM Bob champion Amend fail-before/pass-after authority check 0 Bobcoins
-    - **Controllable:** Manual & Otomatis dengan persetujuan deteksi Meta AI, terpantau, SOP + CCTV supervisor
+    **From Threads share**: IMAGES + VIDEO + TEXT + DOCS -> Muse Spark understands natively
+    - **IMAGES**: TCS34725_yellow_120.jpg, IMX219_gudang_kecil.jpg
+    - **VIDEO**: CCTV_Jemuran_4.mp4 (14 CCTV + MLX90640)
+    - **TEXT**: 25 kodi Naphthol AS-BO logs ESP32-S3
+    - **DOCS**: Floor_Plan_1_200.pdf
     """)
-    if st.button("🔍 Simulate IR Detection AI Meta"):
-        with st.spinner("Scanning MLX90640 + TCS34725 + IMX219..."):
-            time.sleep(1.5)
-        st.success("✅ Kuali #3 118°C >115°C auto-stop Relay COM-NC-NO - AI Suggest: Cek valve Orange SS304")
-        st.warning("⚠️ C-03 12.5M dari Kantor arus 0A SCT-013 - Kabel putus auto-stop")
-        st.info("✅ NDIR CO2 42ppm normal, Taman Filter eco, Thermal Battery 500L 78°C")
+    st.code("""
+from meta_ai import MuseSpark
+client = MuseSpark(model="muse-spark-open")
+response = client.multimodal(
+  images=["TCS34725_yellow_120.jpg", "IMX219_gudang_kecil.jpg"],
+  video=["CCTV_Jemuran_4.mp4"],
+  text="25 kodi Naphthol AS-BO",
+  docs=["Floor_Plan_1_200.pdf"]
+)
+# Returns Delta E, stock alert, labor efficiency, energy, compliance
+    """, language="python")
+    st.success("GitHub: Alchaliveret/batik-guard-8in1 | Live Pages: https://alchaliveret.github.io/batik-guard-8in1/ | Team ID Even Garden | Credit $150")
 
-st.divider()
-st.markdown("""
-**GitHub Pages:** https://aichaliveret.github.io/batik-guard-8in1/  
-**Arsitektur RAB Lengkap:** https://aichaliveret.github.io/batik-guard-8in1/index_Arsitektur_Rab_Lengkap_Ir.html  
-**WiFi:** 192.168.4.1 laptop / 192.168.4.22 HP - SSID meta.aichaliveret  
-**Build for Your World - Startups Track - Meta Global AI Developer Hackathon $1M**
-""")
-st.caption(f"Last update: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')} - AiAutonomous Batik Factory - Tuan Cin - All kalimat v2 complete")
+st.sidebar.markdown("---")
+st.sidebar.markdown("**Repo**: Alchaliveret/batik-guard-8in1")
+st.sidebar.markdown("**Pages**: https://alchaliveret.github.io/batik-guard-8in1/")
+st.sidebar.markdown("**Model API**: Muse Spark Open")
+st.sidebar.markdown(f"Last update: {datetime.now().strftime('%Y-%m-%d %H:%M')}")

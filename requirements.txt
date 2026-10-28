@@ -1,2 +1,12 @@
+# BatikChain Guard v2 + IR SUPER BATIK GUARD 8-in-1 - KOMPLIT FINAL
+# Repo: Alchaliveret/batik-guard-8in1
+# 20x110M = 2200M2 Autonomous Factory
+torch
+transformers
+pillow
+numpy
+requests
+modal
 streamlit
-pandas
+opencv-python-headless
+paho-mqtt
