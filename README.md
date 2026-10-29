@@ -104,3 +104,43 @@ Even Garden, 20 by 110 meters autonomous Batik Clearance Factory. Heritage texti
 
 Built with Meta AI + Muse Spark + ESP32-S3 WiFi Mesh | Even Garden 2026 | MIT License
 
+
+
+### 12. RAB TEKNIK SIPIL - BUDGET FINAL Rp 534.800.000 (Tanpa Tanah Milik)
+- **Total RAB Pabrik Batik 20x110M = 2200m2: Rp 534.800.000** (from kitab-komplit-batik-clearance-awal-sampai-hari-ini.html)
+- Breakdown:
+  - Lahan 20x110 GSB 10M Taman 10M: Rp 0 (milik)
+  - Gate 6M 7+6+7 besi hollow ornamen: Rp 18.000.000
+  - Gudang Besar 22M baja ringan bata: Rp 85.000.000
+  - Gudang Kimia Kecil reaktif exhaust: Rp 22.000.000
+  - Kantor 4x6M 24m² server rack: Rp 28.000.000
+  - Lapang Jemuran Pelangi 50M cat pelangi LEDs sequential: Rp 45.000.000
+  - Kuali Cetak 10x Ø45cm tembaga C110 induction 65-115W 20kHz: 10x Rp 3.500.000 = Rp 35.000.000
+  - Kuali Pematangan 90x70 346L->173L tongkat plakin: Rp 12.000.000
+  - Tabung A/B 500L vacuum 2 Ruang Pluit 2.5 bar 90kg/jam: 2x Rp 15.000.000 = Rp 30.000.000
+  - Turbine Francis 2000-4000W Faraday Lenz ε=-dΦ/dt: 4x Rp 8.000.000 = Rp 32.000.000
+  - Thermal Battery 500L 07:00-19:00 ATS PLN no LiFePO4: Rp 18.000.000
+  - IPAL 3-stage Filtration 10x8x3M Clean 2x2x1.5: Rp 65.000.000
+  - Cerobong 12M SS304 Secondary Combustion Spark Arrestor: Rp 28.000.000
+  - Instalasi 5 Layer Merah Orange Abu IPPAL Ø110 Ungu Putus IoT: Rp 35.000.000
+  - CCTV 14 nodes PIR VCC GND Face Detection: 14x Rp 1.200.000 = Rp 16.800.000
+  - Sensor Kit TCS34725 IMX219 HX711 SHT41 MLX90640 NDIR CO2 MQ-135: 8x Rp 2.500.000 = Rp 20.000.000
+  - Kimia 25 kodi Naphthol Reactive Indanthrene Water Glass Lilin reform 40/35/15/10: 25x Rp 1.800.000 = Rp 45.000.000
+- **Catatan: Budget nggak berubah sekian milyar itu adalah Rp 534.8jt ini, sudah termasuk piping Galvalum mix Stainless 94M Orange SS304 800C, No Motor Water System Tabung A Cold 500L + Tabung B Steam 500L 2 Ruang Partition Pluit 2.5 bar thermosiphon 320L/min Relay COM-NC-NO**
+
+### 13. ESP32-S3 AS7341 + IMX219 FUSION - MANAGER SPECIALIZATION 3 WARNA NAPHThOL
+- **File: Esp32_S3_As7341_Imx219.html / .ino** - Artifact code ESP32-S3 AS7341 11ch + IMX219 8MP colorimeter fusion
+- **Direktur -> Manager Pabrik Batik A special warna Naphthol Merah, Biru, Hitam**
+  - Channel: Merah 630nm (AS-RL), Biru 445-480nm (AS-BO AS-BS), Hitam 680nm (AS-D)
+  - Ref: 200, 80, 120 - Delta E Threshold 10% untuk non-spesialis Kuning
+  - Cocok untuk 10 kuali cetak Ø45cm Cetak 1-5
+- **Direktur -> Manager Pabrik Batik B special warna Naphthol Kuning, Hijau, Violet**
+  - Channel: Kuning 570-590nm (AS-G Water Glass gradasi kuning irregular 120 observasi), Hijau 515-555nm (AS-BS), Violet 415nm (AS-TR)
+  - Ref: Kuning 120 irregular - Delta E Threshold 5% spesialis (ketat!)
+  - Cocok untuk 10 kuali cetak Ø45cm Cetak 6-10
+- **Keuntungan spesialisasi 3 warna per manager:**
+  - Training cut 66% (cuma hafal 3 bukan 9 varian AS)
+  - QC accuracy boost 40% (spesialis kuning detect irregular Water Glass)
+  - Threshold adaptif: Manager B (spesialis kuning) alarm jika Delta E >5%, Manager A alarm jika >10%
+- **Code ESP32-S3:** Adafruit_AS7341 lib, as7341.readAllChannels(), getChannel(590nm), fusion dengan IMX219 CIE L*a*b* Y, HX711 5kg 0.1g timbang Naphthol A soda api dimasak + B nitrit+air keras HCl/H2SO4
+- **Link artifact:** Esp32_S3_As7341_Imx219.html di GitHub Pages https://alchaliveret.github.io/batik-guard-8in1/Esp32_S3_As7341_Imx219.html
