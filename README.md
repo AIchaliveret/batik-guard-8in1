@@ -1,3 +1,30 @@
+# KETTEL UAP PLAN B - OBSERVASI BUKAN GAME - Agent Stack 48
+
+> Practical Application Observasi, Alat Kendali dan Maintenance Purna Jual. Ini bukan game. Ini tidak ada orang lain yang punya, kita doang.
+
+**Kompetisi:** Agent Stack 48 - https://lablab.build/ai-hackathons/agent-stack-48-ai-agents-hackathon
+**Kontak:** asuvelaikha@gmail.com
+**Repo Observasi:** https://github.com/asuveleikha-ai/praktek.aplikasi_autonomouse-batik
+**Repo Sensor:** https://github.com/AIchaliveret/batik-guard-8in1
+
+## Patokan Final Plan B
+- Kettel Uap 500L = Pendukung 250L isi 80% = 200L + Penyimpan 250L isi 60% = 150L, total air 350L
+- Toren Plastik 500L hanya pengisian awal
+- Pipa 5 cm ke reducer 2,5 cm, beda tinggi 1,2 m, tanpa motor, thermosiphon
+- Daur isi ulang 200-300L dibagi 4 tahap 50-75L, lewat Pendukung, lewat pipa 2,5 cm
+- Tekanan 2,5 bar, Turbin Francis 2800 rpm, Alternator Truk 2400-3000 Watt DC
+- Denah 20 m: 1-6 m Kettel, 6-10 m Tungku Raksasa 2 Kuali 600-750L, 10-12 m Jalan 2 m, 12-20 m Ruang Lainnya
+
+## Jual Beda Harga
+- Harga 1: Autonomous Manufacturing Batik = harga mesin + instalasi
+- Harga 2: Observasi Control & Maintenance Purna Jual = harga alat kendali + langganan observasi, beda harga, produk sendiri
+
+## File Plan B di Repo Ini
+- AGENTS.md, SPEC_PLAN_B.md, DENAH_DAN_PIPA.md, OBSERVASI_HARIAN.md
+
+---
+
+
 # IR SUPER BATIK GUARD 8-in-1 - 20x110M Autonomous Factory - KOMPLIT FINAL
 ### Alchaliveret/batik-guard-8in1 - Cerebral Valley + Meta Global AI Hackathon + Model API $150
 
