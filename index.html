@@ -27,9 +27,9 @@ table{width:100%;border-collapse:collapse;font-size:13px} th{text-align:left;bor
 <header>
 <div class="top"><div><h1 style="margin:0;font-size:18px">Kitab Komplit Batik Guard 8in1 - BARU</h1><div class="small">Halaman Utama + RAB + Kettel Uap Plan B - 20 x 110 = 2200 m2</div></div><div><span class="pill yellow">SKALA 1:200</span> <span class="pill green">14 CCTV 24H</span></div></div>
 <div class="tabs">
-<button id="btn-utama" class="active" onclick="show('utama')">Halaman Utama</button>
-<button id="btn-rab" onclick="show('rab')">RAB Vendor</button>
-<button id="btn-kettel" onclick="show('kettel')">Kettel Uap Plan B</button>
+<button id="btn-utama" >Halaman Utama</button>
+<button id="btn-rab" >RAB Vendor</button>
+<button id="btn-kettel" >Kettel Uap Plan B</button>
 </div>
 </header>
 <main>
@@ -39,15 +39,35 @@ table{width:100%;border-collapse:collapse;font-size:13px} th{text-align:left;bor
 <div class="card"><h3>Timeline - Awal Sampai Hari Ini</h3><ul class="small" style="line-height:1.8"><li><b>Lahan & Gate:</b> 20M x 110M = 2200m2, skala 1:200, Gate 6M pola 7+6+7, GSB 10M, Taman 10M, Gudang Besar 22M, Gudang Kecil Kimia reaktif, Kantor 4x6M, Lapang Jemuran Pelangi 50M.</li><li><b>CCTV:</b> 14 CCTV: Cetak 4, Jemuran 4, Halaman Depan 2 Security 24H anti maling, Naphthol 2, Generator+Water Glass 2. PIR cold, Face Detection IMX219 hot, TCS34725 sticks.</li><li><b>Kuali & Energi:</b> 10 Kuali Cetak O45cm tembaga C110 3mm 60-120C, Kuali Pematangan 90x70 346L 8 jam susut 50% jadi 173L, Tabung Kettle Uap 500L 2.5 bar Turbine Francis + Faraday E = -N dPhi/dt.</li><li><b>IPAL & Cerobong:</b> IPAL 3-stage + Cerobong 12M SS304 800C inside Galvalum 315C outside, Cyclone + Water Scrubber + Secondary + Spark, black to white thin.</li><li><b>Kimia:</b> 25 Kodi 500 lembar 200cm 40-60%: Naphthol AS + Fast, 6kg Naphthol, 6L NaOH, 3kg NaNO2, 8L HCl, 10kg Garam. Lilin reform 40% / 35% / 15% / 10% melting 65-68C.</li></ul></div>
 <div class="card dark"><h3>Floor Plan 1:200</h3><p class="small">GSB 10M - Taman 10M - Gate 6M - Gudang Besar 22M - Gudang Kimia Kecil - Kantor 4x6M - Jemuran Pelangi 50M - IPAL 10x8x3M - Cerobong 12M - Access Pick Up via Pintu Depan Besar Utama. Ruler 0-110M - 1cm = 2M real.</p></div>
 </div>
-<div id="sec-rab" class="hidden">
+<div id="sec-rab"
 <div class="card"><h2>RAB - Vendor CV Fajar Setia</h2><p class="small">Jl Prof Dr Satrio, Karet Semanggi, Megah Kuningan (optional) - Estimasi Jury - Exclude lahan jika sudah milik Even Garden. Dari rab-app.tsx + rab-index.css.</p><div style="overflow-x:auto"><table><tr><th>Item</th><th>Spesifikasi</th><th class="r">Qty</th><th class="r">Total</th></tr><tr><td><b>Gate 6M 7+6+7</b></td><td>Besi hollow + ornamen</td><td class="r">1</td><td class="r">Rp 18.000.000</td></tr><tr><td><b>Gudang Besar 22M</b></td><td>Baja ringan + bata</td><td class="r">1</td><td class="r">Rp 85.000.000</td></tr><tr><td><b>Gudang Kimia Kecil</b></td><td>Reaktif + exhaust</td><td class="r">1</td><td class="r">Rp 22.000.000</td></tr><tr><td><b>Kantor 4x6M</b></td><td>24m2 + server rack</td><td class="r">1</td><td class="r">Rp 28.000.000</td></tr><tr><td><b>Jemuran Pelangi 50M</b></td><td>Cor + cat pelangi + LEDs</td><td class="r">1</td><td class="r">Rp 45.000.000</td></tr><tr><td><b>Kuali Cetak 10x O45cm</b></td><td>Tembaga C110 3mm + induction 65-115W</td><td class="r">10</td><td class="r">Rp 35.000.000</td></tr><tr><td><b>Kuali Pematangan 90x70</b></td><td>346L SS304 8 jam</td><td class="r">1</td><td class="r">Rp 12.000.000</td></tr><tr><td><b>Tabung A/B 500L Vakum</b></td><td>SS304 vacuum + 2 Ruang 2.5 bar</td><td class="r">2</td><td class="r">Rp 30.000.000</td></tr><tr><td><b>Turbine Francis + Generator</b></td><td>1000W each, total 2000-4000W</td><td class="r">4</td><td class="r">Rp 32.000.000</td></tr><tr><td><b>Thermal Battery 500L</b></td><td>07:00-17:00 + lembur 17:00-19:00 ATS PLN</td><td class="r">1</td><td class="r">Rp 18.000.000</td></tr><tr><td><b>IPAL 3-stage</b></td><td>Grease + Neutral + Filtration 10x8x3M</td><td class="r">1</td><td class="r">Rp 65.000.000</td></tr><tr><td><b>Cerobong 12M</b></td><td>SS304 800C inside Galvalum 315C outside</td><td class="r">1</td><td class="r">Rp 28.000.000</td></tr><tr><td><b>Instalasi 5 Layer</b></td><td>Merah Orange Biru Abu IPPAL O110 Ungu IoT</td><td class="r">1</td><td class="r">Rp 35.000.000</td></tr><tr><td><b>CCTV 14 + PIR + IMX219</b></td><td>Cetak 4 Jemuran 4 Depan 2 Naphthol 2 Generator 2</td><td class="r">14</td><td class="r">Rp 16.800.000</td></tr><tr><td><b>Sensor Kit 8 items</b></td><td>ESP32-S3 IMX219 HX711 SHT41 MLX90640 NDIR MQ-135</td><td class="r">8</td><td class="r">Rp 20.000.000</td></tr><tr><td><b>Kimia 25 Kodi</b></td><td>6kg Naphthol 6L NaOH 3kg NaNO2 8L HCl 10kg Garam</td><td class="r">25</td><td class="r">Rp 45.000.000</td></tr><tr><td colspan="3" style="text-align:right"><b>TOTAL ESTIMASI</b></td><td class="r"><b>Rp 534.800.000</b></td></tr></table></div><p class="small">+ Kettel Plan B Sight Glass + Auto Refill - lihat tab Kettel. Sudah masuk di paket Tabung A/B, tidak niban RAB lama.</p></div>
 </div>
-<div id="sec-kettel" class="hidden">
 <div class="card" style="background:#fff7d1"><div class="mono">KETTEL UAP PLAN B - BARU - OBSERVASI BUKAN GAME</div><h2 style="font-size:30px;line-height:1">Kettel Uap 500L - 2x250L - Thermosiphon Kinetik - 2800 RPM</h2><p class="small">Dari kettel-uap-app.tsx + kettel-uap-index.css. Parameter dikunci: 2x250L total 500L, pipa tungku 5cm mengecil ke 2.5cm inlet/outlet, tabung berjenjang 36cm, thermosiphon kinetik tanpa motor, 2800 RPM, 2400-3000W DC via turbo turbine + truck alternator.</p><div class="grid g3"><div class="stat"><b>500 Liter</b><br>2x250L tube</div><div class="stat"><b>5cm -&gt; 2.5cm</b><br>Inlet / Outlet</div><div class="stat"><b>36 cm</b><br>Staggered</div><div class="stat"><b>2800 RPM</b><br>Kinetik stabil</div><div class="stat"><b>2400-3000W</b><br>Turbo + Alternator truck</div><div class="stat"><b>75W max 125W</b><br>Pompa jika perlu</div></div></div>
 <div class="grid g2"><div class="card dark"><b>SIGHT GLASS + AUTO REFILL - BARU</b><ul class="small" style="line-height:1.8"><li><b>Sight Glass borosilicate</b> - tahan panas, tahan 2.5 bar, lihat level air langsung. 2 titik: Tabung A dan B.</li><li><b>Auto Refill:</b> Level bawah - valve buka, isi air dingin dari tangki atas. Level atas - valve tutup. Float + solenoid + Relay ESP32-S3 COM-NO.</li><li><b>Tangki dingin di atas Kettel</b> - gravitasi, thermosiphon tanpa motor. Air dingin turun, air panas naik, ritme teratur.</li><li><b>Fraksi air:</b> Tabung A 3/5, Tabung B 4/5 - berjenjang 36cm, bukan sejajar.</li></ul><div style="background:#0c1220;border:1px solid #334155;border-radius:14px;padding:14px">Tabung A - 62% - 22C<div class="bar"><i style="width:62%"></i></div><br>Tabung B - 88% - 92C - 2.5 bar<div class="bar bar2"><i style="width:88%"></i></div></div></div><div class="card"><b>KENDALI & MAINTENANCE</b><ul class="small" style="line-height:1.8"><li><b>Observasi:</b> Cek sight glass tiap jam, catat suhu SHT41 + MLX90640, tekanan 2.5 bar, RPM 2800.</li><li><b>Maintenance:</b> Bersihkan sight glass tiap minggu, cek valve auto refill, cek seal Orange SS304, cek alternator truck.</li><li><b>Safety:</b> Suhu &gt;115C - auto-stop COM-NC. Tekanan &gt;2.5 bar - relief valve. Kabel putus SCT-013 - auto-stop C-03 12.5M.</li><li><b>Skala gambar:</b> 1:100, kertas mm block 40cm x 30cm, satuan cm, meter untuk denah.</li></ul><div><span class="pill yellow">Thermosiphon tanpa motor</span> <span class="pill green">Gravitasi + beda tinggi</span></div></div></div>
 <div class="card dark"><b class="mono">ALUR: TANGKI DINGIN ATAS - TABUNG A - TABUNG B - TURBIN - ALTERNATOR - 10 KOMPOR TEMBAGA</b><p class="small">Tangki dingin di atas (gravitasi) - Tabung A dingin - Tabung B panas 2.5 bar 90kg/jam - Turbine Francis magnet + copper coil Faraday E = -N dPhi/dt - Truck Alternator 2400-3000W DC - 10 kompor tembaga C110 65-115W induction 20kHz. Sisa uap - Thermal Battery 500L - ATS PLN lembur 17:00-19:00.</p></div>
+</div><div id="sec-ai">
+<div class="card" style="background:#fff7d1">
+<div class="mono">AI PABRIK - AI</div>
+<h2 style="font-size:30px;line-height:1">AI Pabrik Autonomous.</h2>
+<p class="small">Ini aku, AI Pabrik, satu-satunya AI di pabrik 20x110 = 2200m2 ini. Bisa tanya jawab, bisa fix, bisa update, bisa upgrade.</p>
+</div>
+<details>
+<summary>Tanya: Kuali panas kenapa?</summary>
+<p>Dokter: Kuali lebih dari 115C -> Auto-stop COM-NC, cek MLX90640, tunggu dingin ke 90C baru start lagi.</p>
+</details>
+<details>
+<summary>Tanya: Tekanan tinggi kenapa?</summary>
+<p>Dokter: Tekanan lebih dari 2.5 bar -> Buka relief valve, cek sight glass Tabung B, cek auto refill, jangan paksa.</p>
+</details>
+<details>
+<summary>Tanya: Sight glass keruh kenapa?</summary>
+<p>Dokter: Bersihkan borosilicate, cek seal, cek level 3/5 dan 4/5.</p>
+</details>
+<details>
+<summary>Tanya: Sensor mati kenapa?</summary>
+<p>Dokter: Cek ESP32-S3, cek 18650 Double, cek WiFi mesh 192.168.4.1 dan 192.168.4.22.</p>
+</details>
 </div>
 </main>
-<script>function show(id){['utama','rab','kettel'].forEach(k=>{document.getElementById('sec-'+k).classList.toggle('hidden',k!==id);document.getElementById('btn-'+k).classList.toggle('active',k===id);});window.scrollTo({top:0,behavior:'smooth'});}</script>
 </body>
 </html>
