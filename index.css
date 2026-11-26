@@ -1,49 +1,58 @@
-@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root{
-  --paper:#F3EFE6;
-  --surface:#FFFEFA;
-  --surface-2:#E9E4D6;
-  --ink:#16211E;
-  --ink-soft:#4B5A55;
-  --line:#16211E;
-  --accent:#C84B18;
-  --teal:#14665B;
-  --blue:#1D5A8A;
-  --gold:#D99A1F;
-  --green:#2E7A4B;
-  --red:#B32B1E;
-  --safe-area-inset-top: env(safe-area-inset-top, 0px);
+  --surface:#eef3f8;
+  --surface-2:#ffffff;
+  --surface-3:#dbe8f5;
+  --ink:#0a2138;
+  --muted:#526d87;
+  --line:#b9cddd;
+  --line-2:#d7e2ec;
+  --blue:#1156a6;
+  --blue-dark:#0a3a72;
+  --blue-bright:#1d78e0;
+  --amber:#e9a227;
+  --amber-soft:#fff3d0;
+  --green:#137a4f;
+  --green-soft:#dff6e9;
+  --red:#b3261e;
+  --red-soft:#ffe9e7;
+  --shadow:0 10px 30px rgba(10,33,56,.09);
 }
 @media (prefers-color-scheme: dark){
   :root{
-    --paper:#141A18;
-    --surface:#1E2623;
-    --surface-2:#28322E;
-    --ink:#F2EEE3;
-    --ink-soft:#B9C0B9;
-    --line:#F2EEE3;
-    --accent:#FF7A3C;
-    --teal:#6FC4B6;
-    --blue:#7BB6E8;
-    --gold:#F0C25A;
-    --green:#7BC995;
-    --red:#FF7A6B;
+    --surface:#071523;
+    --surface-2:#0d243d;
+    --surface-3:#173451;
+    --ink:#edf4fb;
+    --muted:#a9c0d6;
+    --line:#274a6a;
+    --line-2:#203e5a;
+    --blue:#4a9ef0;
+    --blue-dark:#dceeff;
+    --blue-bright:#64b0ff;
+    --amber:#f2bd3f;
+    --amber-soft:#3a2d08;
+    --green:#55d298;
+    --green-soft:#123a27;
+    --red:#ff7a70;
+    --red-soft:#431915;
+    --shadow:0 10px 30px rgba(0,0,0,.35);
   }
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--paper);color:var(--ink);font-family:'Archivo',system-ui,sans-serif}
-.mono{font-family:'IBM Plex Mono',ui-monospace,monospace}
-.wrap{overflow-wrap:anywhere}
-.blueprint-grid{
-  background-image:linear-gradient(to right, rgba(22,33,30,.07) 1px, transparent 1px), linear-gradient(to bottom, rgba(22,33,30,.07) 1px, transparent 1px);
+body{margin:0;background:var(--surface);color:var(--ink);font-family:"Archivo",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+.mono{font-family:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace}
+.blueprint{
+  background-color:var(--blue-dark);
+  background-image:linear-gradient(rgba(255,255,255,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.08) 1px,transparent 1px);
   background-size:22px 22px;
 }
-@media (prefers-color-scheme: dark){
-  .blueprint-grid{background-image:linear-gradient(to right, rgba(242,238,227,.08) 1px, transparent 1px), linear-gradient(to bottom, rgba(242,238,227,.08) 1px, transparent 1px);}
-}
+.num{font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+button{font:inherit}
+button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid var(--amber);outline-offset:2px}
+.table-head{font-size:.68rem;letter-spacing:.11em;text-transform:uppercase;color:var(--muted);font-weight:800}
