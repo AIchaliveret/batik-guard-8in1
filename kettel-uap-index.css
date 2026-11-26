@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+  --bg:#F2F0E9;
+  --surface:#FFFFFF;
+  --surface-2:#E9EFEF;
+  --ink:#17262E;
+  --muted:#5E6F76;
+  --line:#D4CDC0;
+  --line-2:#B9C4C5;
+  --primary:#0B5A6B;
+  --primary-2:#083D49;
+  --accent:#D96C27;
+  --accent-soft:#FFF0E5;
+  --ok:#1E7A4C;
+  --ok-soft:#E7F5ED;
+  --warn:#9A6700;
+  --warn-soft:#FFF5D6;
+  --danger:#A93A2A;
+  --danger-soft:#FCECE8;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#111D21;
+    --surface:#1A2B30;
+    --surface-2:#21383E;
+    --ink:#F0F2EC;
+    --muted:#B7C5C3;
+    --line:#385057;
+    --line-2:#4D666B;
+    --primary:#6FC1D0;
+    --primary-2:#9ED9E3;
+    --accent:#FF8A3D;
+    --accent-soft:#3A271E;
+    --ok:#6BD194;
+    --ok-soft:#1F3B2C;
+    --warn:#FFCE55;
+    --warn-soft:#3A331B;
+    --danger:#FF8A78;
+    --danger-soft:#432622;
+  }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Archivo',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
+.mono{font-family:'IBM Plex Mono',ui-monospace,SFMono-Regular,Menlo,monospace}
+a{color:inherit}
+input,select,textarea,button{font:inherit}
+input,select,textarea{width:100%;border:1px solid var(--line-2);background:var(--surface);color:var(--ink);border-radius:8px;padding:.65rem .75rem;outline:none}
+input:focus,select:focus,textarea:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(11,90,107,.14)}
+button{cursor:pointer}
+button:disabled{opacity:.55;cursor:not-allowed}
+.blueprint-grid{background-image:linear-gradient(rgba(11,90,107,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(11,90,107,.07) 1px,transparent 1px);background-size:22px 22px}
+.gauge-track{height:12px;background:var(--surface-2);border:1px solid var(--line);overflow:hidden;border-radius:999px}
+.gauge-fill{height:100%;transition:width .5s ease}
+.chip{display:inline-flex;align-items:center;gap:.35rem;border-radius:999px;padding:.25rem .6rem;font-size:.78rem;font-weight:700}
