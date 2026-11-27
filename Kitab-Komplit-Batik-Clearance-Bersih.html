@@ -76,6 +76,75 @@ h1{font-size:40px;line-height:.95;margin:8px 0} h2{font-size:26px;margin:0} p{li
 
 <!-- FLOOR PLAN -->
 <section id="floor" class="paper">
+
+<div style="border:3px solid #fb7185;border-radius:16px;padding:16px;margin:16px 0;background:#fff7f1">
+<div class="mono" style="font-size:11px;letter-spacing:.15em;color:#dc2626;font-weight:700">★ KOREKSI SESUAI GAMBAR TANGAN — TABUNG JETTEL UAP TEKANAN TINGGI ★</div>
+<h3 style="margin:8px 0">Masukan Air dari Pipa Api LEBIH TINGGI dari Tabung Kettel Pendukung — Pipa di BAWAH Tabung ke Instalasi Pengapian Tungku Raksasa</h3>
+<p style="font-size:13px;line-height:1.6"><b>Jangan dibalik.</b> Tabung Jettel (kiri) = yang TINGGI 2 Meter. Tabung Kettel Pendukung (kanan) = yang LEBIH RENDAH, berjenjang 36 cm ke bawah. Air masuk dari pipa api di ATAS, bukan dari bawah. Pipa keluaran yang di BAWAH tabung pendukung itulah yang menuju instalasi pengapian tungku raksasa.</p>
+
+<!-- SVG DIAGRAM BERSIH SESUAI GAMBAR TANGAN -->
+<svg viewBox="0 0 720 520" style="width:100%;max-width:720px;display:block;margin:12px auto;background:#faf8f2;border:1px solid #ddd;border-radius:12px" xmlns="http://www.w3.org/2000/svg">
+  <text x="20" y="28" font-family="monospace" font-size="13" font-weight="700">ATAS</text>
+  <text x="20" y="500" font-family="monospace" font-size="13" font-weight="700">BAWAH</text>
+  <!-- Left tall tube -->
+  <rect x="140" y="50" width="110" height="360" rx="18" fill="#fff" stroke="#111" stroke-width="3"/>
+  <ellipse cx="195" cy="50" rx="55" ry="12" fill="#e5e7eb" stroke="#111" stroke-width="2"/>
+  <ellipse cx="195" cy="410" rx="55" ry="12" fill="#e5e7eb" stroke="#111" stroke-width="2"/>
+  <text x="195" y="90" text-anchor="middle" font-family="monospace" font-size="11" font-weight="700">TABUNG JETTEL</text>
+  <text x="195" y="106" text-anchor="middle" font-family="monospace" font-size="10">UAP TEKANAN TINGGI</text>
+  <text x="195" y="122" text-anchor="middle" font-family="monospace" font-size="10">Ø38 cm × H200 cm</text>
+  <!-- water level -->
+  <line x1="145" y1="250" x2="245" y2="250" stroke="#111" stroke-width="2"/>
+  <text x="135" y="255" font-family="monospace" font-size="11" text-anchor="end">2 Meter</text>
+  <!-- A B marks -->
+  <text x="120" y="360" font-family="monospace" font-size="12" font-weight="700">A: 80 cm</text>
+  <text x="120" y="380" font-family="monospace" font-size="12" font-weight="700">B: 100 cm</text>
+  <text x="120" y="398" font-family="monospace" font-size="10">agar jarak output</text>
+  <text x="120" y="412" font-family="monospace" font-size="10">maks circulasi-nya</text>
+  <!-- Right shorter tube -->
+  <rect x="360" y="150" width="110" height="340" rx="18" fill="#fff" stroke="#111" stroke-width="3"/>
+  <ellipse cx="415" cy="150" rx="55" ry="12" fill="#e5e7eb" stroke="#111" stroke-width="2"/>
+  <ellipse cx="415" cy="490" rx="55" ry="12" fill="#e5e7eb" stroke="#111" stroke-width="2"/>
+  <text x="415" y="190" text-anchor="middle" font-family="monospace" font-size="11" font-weight="700">TABUNG KETTEL</text>
+  <text x="415" y="206" text-anchor="middle" font-family="monospace" font-size="10">PENDUKUNG</text>
+  <text x="415" y="222" text-anchor="middle" font-family="monospace" font-size="10">berjenjang 36 cm</text>
+  <text x="415" y="238" text-anchor="middle" font-family="monospace" font-size="10">lebih rendah</text>
+  <!-- Top connecting pipe - HIGH inlet from fire pipe -->
+  <path d="M 250 60 L 360 60 L 360 150" fill="none" stroke="#dc2626" stroke-width="3"/>
+  <text x="260" y="48" font-family="monospace" font-size="11" font-weight="700" fill="#dc2626">← PIPA API MASUK — PALING TINGGI</text>
+  <!-- Middle pipe - air residu -->
+  <line x1="250" y1="260" x2="360" y2="260" stroke="#111" stroke-width="2"/>
+  <text x="480" y="255" font-family="monospace" font-size="11" font-weight="700">Pipa Ingut ke Api — 40 cm</text>
+  <line x1="470" y1="280" x2="700" y2="280" stroke="#111" stroke-width="2"/>
+  <text x="480" y="310" font-family="monospace" font-size="11">→ Pipa Air Residu Panas</text>
+  <text x="480" y="328" font-family="monospace" font-size="11">Kembali ke:</text>
+  <text x="480" y="346" font-family="monospace" font-size="11">1 — Kuali Masak / Raksasa</text>
+  <text x="480" y="364" font-family="monospace" font-size="11">2 — Pembakaran Tungku Raksasa</text>
+  <!-- Lower pipe - auto -->
+  <line x1="250" y1="310" x2="360" y2="310" stroke="#111" stroke-width="2"/>
+  <text x="255" y="300" font-family="monospace" font-size="10">dari Pipa Api — auto</text>
+  <!-- Bottom pipe to giant furnace -->
+  <path d="M 415 490 L 415 470 L 560 470" fill="none" stroke="#dc2626" stroke-width="3"/>
+  <marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#dc2626"/></marker>
+  <line x1="560" y1="470" x2="690" y2="470" stroke="#dc2626" stroke-width="3" marker-end="url(#arr)"/>
+  <text x="480" y="455" font-family="monospace" font-size="11" font-weight="700" fill="#dc2626">PIPA DI BAWAH TABUNG →</text>
+  <text x="480" y="492" font-family="monospace" font-size="11" font-weight="700">INSTALASI PENGAPIAN</text>
+  <text x="480" y="508" font-family="monospace" font-size="11" font-weight="700">TUNGKU RAKSASA</text>
+  <!-- height note -->
+  <text x="20" y="480" font-family="monospace" font-size="11">Tinggi dag / Tabung:</text>
+  <text x="20" y="496" font-family="monospace" font-size="11">2,5 M atau 2,0 M saja atau 1,5 M saja</text>
+  <text x="600" y="28" font-family="monospace" font-size="10">1 M ← (skala gambar)</text>
+</svg>
+
+<table><thead><tr><th>Bagian</th><th>Posisi BENAR</th><th>Keterangan dari Gambar Tangan</th></tr></thead><tbody>
+<tr><td><b>Tabung Jettel Uap Tekanan Tinggi (KIRI)</b></td><td><b>PALING TINGGI — 2 Meter</b><br>A: 80 cm / B: 100 cm agar jarak output maks circulasi-nya</td><td>Masukan air dari <b>pipa api LEBIH TINGGI</b> dibandingkan tabung kettel pendukung. Pipa atas menyambung ke atas tabung pendukung.</td></tr>
+<tr><td><b>Tabung Kettel Uap Pendukung (KANAN)</b></td><td><b>LEBIH RENDAH — berjenjang 36 cm</b><br>Ø38 cm × H200 cm, staggered 36 cm</td><td>Tabung pendukung lebih pendek. Jangan disamakan tingginya dengan tabung jettel.</td></tr>
+<tr><td><b>Pipa Ingut ke Api</b></td><td><b>Tengah — 40 cm</b></td><td>Dari tabung pendukung ke api. Pipa Air Residu Panas kembali ke: 1 — Kuali Masak / Raksasa, 2 — Pembakaran Tungku Raksasa.</td></tr>
+<tr><td><b>Pipa di BAWAH Tabung</b></td><td><b>BAWAH tabung pendukung → keluar</b></td><td><b>Pipa TO instalasi pengapian tungku raksasa.</b> Ini pipa yang paling bawah, bukan pipa atas. Dari bawah tabung langsung ke instalasi pengapian tungku raksasa.</td></tr>
+<tr><td><b>Tinggi Dag / Tabung</b></td><td>2,5 M atau 2,0 M saja atau 1,5 M saja</td><td>Pilih sesuai tinggi tungku raksasa di lapangan. Di gambar: 2 Meter patokan utama.</td></tr>
+</tbody></table>
+<p style="font-size:12px;opacity:.75">Alur yang benar: <b>Pipa Api (ATAS, tinggi) → masuk Tabung Jettel Tinggi → turun ke Tabung Kettel Pendukung (lebih rendah, 36 cm) → Pipa Ingut ke Api 40 cm + Pipa Residu Panas kembali ke Kuali Masak / Pembakaran → Pipa BAWAH Tabung → Instalasi Pengapian Tungku Raksasa.</b> Thermosiphon tetap jalan: hot rises, cold falls, tanpa pompa.</p>
+</div>
 <h2>1. Floor Plan 1:200 — 20M × 100M = 2000M² — Ruler Every Side — Gate 6M [6+8+6]</h2>
 <p><b>Ukuran Lahan:</b> 20 m × 100 m = 2000 m² &nbsp;|&nbsp; <b>Skala:</b> 1:200 &nbsp;|&nbsp; <b>Orientasi:</b> Top View &nbsp;|&nbsp; <b>GSB:</b> 10M dari jalan</p>
 <div class="blueprint">
