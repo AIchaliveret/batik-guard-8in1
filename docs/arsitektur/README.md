@@ -14,7 +14,7 @@ Denah lantai arsitektur Pabrik Batik Guard versi submission Hackathon. Denah ini
 ## Spesifikasi Denah
 
 - **Ukuran Lahan:** 20 m x 100 m = 2000 m2
-- **Skala:** 1:100 • Orientasi: Top View
+- **Skala:** 1:200 • Orientasi: Top View
 - **Pembagian Area:**
     - Halaman depan 20 x 10 m = 200 m2 (carpark+taman)
     - Parkir motor 6 x 21 m = 126 m2 + ruang kantor 4 x 6 m = 24 m2 + ruang kamar 4 x 6 m = 24 m2 + gudang serba guna 4 x 4 m = 16 m2
