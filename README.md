@@ -1,4 +1,4 @@
-# KETTEL UAP PLAN B - OBSERVASI BUKAN GAME - Agent Stack 48
+# KETTEL UAP PLAN B - OBSERVASI
 
 > Practical Application Observasi, Alat Kendali dan Maintenance Purna Jual. Ini bukan game. Ini tidak ada orang lain yang punya, kita doang.
 
@@ -10,7 +10,7 @@
 ## Patokan Final Plan B
 - Kettel Uap 500L = Pendukung 250L isi 80% = 200L + Penyimpan 250L isi 60% = 150L, total air 350L
 - Toren Plastik 500L hanya pengisian awal
-- Pipa 5 cm ke reducer 2,5 cm, beda tinggi 1,2 m, tanpa motor, thermosiphon
+- Pipa Stainlessstill 5 cm ke reducer 2,5 cm, beda tinggi 1,2 m, tanpa motor, thermosiphon
 - Daur isi ulang 200-300L dibagi 4 tahap 50-75L, lewat Pendukung, lewat pipa 2,5 cm
 - Tekanan 2,5 bar, Turbin Francis 2800 rpm, Alternator Truk 2400-3000 Watt DC
 - Denah 20 m: 1-6 m Kettel, 6-10 m Tungku Raksasa 2 Kuali 600-750L, 10-12 m Jalan 2 m, 12-20 m Ruang Lainnya
@@ -25,10 +25,10 @@
 ---
 
 
-# IR SUPER BATIK GUARD 8-in-1 - 20x110M Autonomous Factory - KOMPLIT FINAL
-### Alchaliveret/batik-guard-8in1 - Cerebral Valley + Meta Global AI Hackathon + Model API $150
+# IR SUPER BATIK GUARD 8-in-1 - 20x100M Autonomous Factory - KOMPLIT FINAL
+### Alchaliveret/batik-guard-8in1 Meta Global AI Hackathon + Model API Rocm
 
-**This is our robotic prototype. Even Garden, 20 by 110 meters autonomous Batik Clearance Factory.**
+**This is our robotic prototype. Even Garden, 20 by 100 meters autonomous Batik Clearance Factory.**
 
 Live Demo: https://alchaliveret.github.io/batik-guard-8in1/
 Repo: https://github.com/Alchaliveret/batik-guard-8in1
@@ -37,9 +37,9 @@ Repo: https://github.com/Alchaliveret/batik-guard-8in1
 
 ## 📦 KOMPLIT DARI AWAL SAMPAI HARI INI - Semua ada di sini
 
-### 1. FLOOR PLAN 1:200 - 20M x 110M = 2200M2 - Ruler Every Side - Gate 6M [7+6+7]
+### 1. FLOOR PLAN 1:200 - 20M x 100M = 2000M2 - Ruler Every Side - Gate 6M [6+8+6]
 - GSB 10M dari jalan + Taman Depan 10M filter debu + aesthetic + buffer anti maling + CCTV Halaman Depan 2 Security 24H
-- Gudang Besar 22M panjang muat 10 kuali cetak Ø45cm + kuali pematangan 90x70 346L->173L
+- Gudang Besar 60M2 panjang muat 10 kuali cetak Ø45cm + kuali pematangan 90x70 346L->173L
 - Gudang Kecil Kimia: Reaktif, Naphthol A soda api dimasak, Naphthol B nitrit+air keras HCl/H2SO4, Indanthrene + Water Glass gradasi kuning muda-tua irregular, Generator 1000Wx4 Thermal Battery 500L
 - Kantor 4x6M = 24m² server ESP32-S3 mesh 192.168.4.1 laptop & 192.168.4.22 HP meta.aichaliveret - Control Office 4x6M Isometric Cutaway (see 3d-interior-architecture-control-office-4x6M.webp)
 - Lapang Jemuran Pelangi 50M warna pelangi + CCTV Jemuran 4 + SHT41 + MLX90640 32x24
