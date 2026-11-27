@@ -1,8 +1,8 @@
 # app.py - BatikChain Guard v2 + IR SUPER BATIK GUARD 8-in-1 - MERGED
 # Meta AI Backend - Muse Spark Open + Muse Wonder + SAM 3.1 + France Turbo
 # Repo: Alchaliveret/batik-guard-8in1
-# 20x110M = 2200M2 Autonomous Factory
-# Credit: $150 Meta Global AI Hackathon - Team ID Even Garden (jugalachaliveret@gmail.com via GitHub)
+# 20x100M = 2000M2 Autonomous Factory
+# Meta Global AI Hackathon - Team ID aichaliveret (jugalachaliveret@gmail.com via GitHub)
 # Multimodality: IMAGES → VIDEO → TEXT → DOCS → Muse Spark understands natively
 
 import modal
@@ -53,16 +53,16 @@ def detect_batik_issue(thermal_data, tcs_data, imx_data):
 def rab_calculator():
     """RAB dari app.py lama - 20x110M"""
     return {
-        "site": "20x110M 2200M2",
+        "site": "20x100M 2000M2",
         "tungku": "2 besar + 2 sedang + 2 kayu bakar",
         "kuali": "500-1000L Ø1.2M + 10x Ø45cm tembaga C110 + Pematangan 90x70 346L->173L",
         "piping": "Galvalum+Stainless 2-3cm 94M + Orange SS304 800C + Galvalum 315C",
         "generator": "France Turbo Turbine Francis magnets+copper E=-N dPhi/dt 2.5bar 90kg/jam + 2-4x 1000W total 2000-4000W",
-        "kompor": "10 kompor tembaga C110 3mm DC 48V 65-115W induction 20kHz eddy",
+        "kompor": "10 kompor tembaga C110 1,2mm DC 48V 65-115W induction 20kHz eddy",
         "thermal_battery": "500L 07:00-17:00 + lembur 17:00-19:00 ATS PLN no LiFePO4",
         "ipal": "10x8x3M 4 stage eco + Filter Drain Box",
         "cerobong": "12M SS304 800C inside Galvalum 315C outside Cyclone + Scrubber + Secondary + Spark black->white thin",
-        "floor_plan": "20x110M Gate 6M [7+6+7] GSB 10M Taman 10M Gudang Besar 22M",
+        "floor_plan": "20x100M Gate 6M [6+8+6] GSB 10M Taman 10M Gudang Besar 60M2",
         "ecotek": "Api 4 tungku tidak kebuang ekonomis + No Motor Water 2 Tabung Vakum 500L thermosiphon first steam presses cold tank 320L/min",
         "cctv": "14 CCTV Cetak 4 Jemuran 4 Halaman Depan 2 Security 24H Naphthol 2 Generator 2 PIR cold Face Detection hot",
         "sensors": "TCS34725 Bug No2 120 obs Delta E, IMX219 8MP 5500K, HX711 5kg 0.1gr + 50kg, SHT41, MLX90640 32x24, NDIR CO2 4ch, MQ-135"
@@ -77,7 +77,7 @@ def analyze_batik_guard():
     - images: TCS34725_yellow_120.jpg (Bug No2 gradasi kuning), IMX219_gudang_kecil.jpg
     - video: CCTV_Jemuran_4.mp4 (14 CCTV: Cetak 4, Jemuran 4, Halaman Depan 2 Security 24H, Naphthol 2, Generator+Water Glass 2)
     - text: 25 kodi Naphthol AS-BO + logs ESP32-S3 WiFi mesh 192.168.4.1 laptop & 192.168.4.22 HP
-    - docs: Floor_Plan_1_200.pdf (20x110M=2200m2 Gate 6M [7+6+7] GSB 10M Taman 10M etc)
+    - docs: Floor_Plan_1_200.pdf (20x100M=2000m2 Gate 6M [6+8+6] GSB 10M Taman 10M etc)
     Calls Meta Model API Muse Spark Open - understands images, video, audio-in-video natively
     """
     api_key = os.environ.get("META_API_KEY", "YOUR_API_KEY_FROM_dev.meta.ai")
@@ -99,7 +99,7 @@ def analyze_batik_guard():
                 Return JSON with color_delta, stock_alert, labor_efficiency, energy, compliance"""},
                 {"type": "image_url", "image_url": {"url": f"data:image/jpeg;base64,{encode_image_to_base64('TCS34725_yellow_120.jpg')}"}},
                 {"type": "image_url", "image_url": {"url": f"data:image/jpeg;base64,{encode_image_to_base64('IMX219_gudang_kecil.jpg')}"}},
-                {"type": "text", "text": "Document: Floor_Plan_1_200.pdf - 20M x 110M = 2200m2, Gate 6M [7+6+7], GSB 10M, Taman 10M, Gudang Besar 22M, IPAL 10x8x3M, Cerobong 12M SS304"}
+                {"type": "text", "text": "Document: Floor_Plan_1_200.pdf - 20M x 100M = 2000m2, Gate 6M [6+8+6], GSB 10M, Taman 10M, Gudang Besar 60M2, IPAL 10x8x3M, Cerobong 12M SS304"}
             ]
         }],
         "video": ["CCTV_Jemuran_4.mp4"],
@@ -114,13 +114,13 @@ def analyze_batik_guard():
             "stock_alert": "Reactive low - IMX219 Gudang Kecil",
             "labor_efficiency": "08:42 Budi S. active, 12 authorized, Gate 6M access OK",
             "energy": "Tabung A 58% Tabung B 58% - No Motor Water 320L/min active - Thermal Battery 500L + France Turbo 2000-4000W",
-            "floor_plan_compliance": "GSB 10M OK, Taman 10M OK, Gate 6M [7+6+7] OK, IPAL 10x8x3M OK",
+            "floor_plan_compliance": "GSB 10M OK, Taman 10M OK, Gate 6M [6+8+6] OK, IPAL 10x8x3M OK",
             "chemical_monitoring": {"Naphthol": "45.2 mg/L Safe", "Reactive": "22.8 mg/L Normal", "Indanthrene": "18.5 mg/L Normal"},
             "security": "CCTV Halaman Depan 2 Security 24H ON REC - anti maling",
             "sustainability": "Zero waste, circular, black smoke to thin white via cyclone scrubber",
             "france_turbo": "Turbine Francis magnets+copper E=-N dPhi/dt 2.5bar 90kg/jam -> 10 kompor tembaga C110 65-115W Ready"
         },
-        "source": "Alchaliveret/batik-guard-8in1 - 20x110M Autonomous Factory - BatikChain Guard v2 + IR SUPER",
+        "source": "Alchaliveret/batik-guard-8in1 - 20x100M Autonomous Factory - BatikChain Guard v2 + IR SUPER",
         "github_pages": "https://alchaliveret.github.io/batik-guard-8in1/"
     }
     return mock_response
