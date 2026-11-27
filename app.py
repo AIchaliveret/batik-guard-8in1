@@ -22,7 +22,7 @@ DIMENSI_KUNCI = {
     "Kuali Pematangan": "90x70cm 346L -> 173L",
     "Tabung Ke-1 Jettel": "Tabung Kettel Uap Tekanan Tinggi — masukan pipa air panas perapian PALING ATAS / PALING TINGGI",
     "Tabung Ke-2 Pendukung": "250 Liter — lubang keluar air residu PALING BAWAH, 80 cm s/d 120 cm LEBIH RENDAH dari masukan Tabung Ke-1",
-    "Turbine + Generator": "Turbine Turbo + Generator — Turbine Francis / Turbo, Faraday E=-N dPhi/dt, 1000W each total 2000-4000W",
+    "Turbine + Generator": "Turbine Turbo + Generator — Turbine bermagnetic / Turbo, Faraday E=-N dPhi/dt, 1000W each total 2000-4000W",
     "Skala": "1:200 — 1cm gambar = 2M asli",
 }
 
