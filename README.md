@@ -38,11 +38,23 @@ Repo: https://github.com/Alchaliveret/batik-guard-8in1
 ## 📦 KOMPLIT DARI AWAL SAMPAI HARI INI - Semua ada di sini
 
 ### 1. FLOOR PLAN 1:200 - 20M x 100M = 2000M2 - Ruler Every Side - Gate 6M [6+8+6]
+Ukuran Lahan: 20 m x 100 m = 2000 m2
+Skala: 1:200 • Orientasi: Top View
+Pembagian Area:
+Halaman depan 20 x 10 m = 200 m2 (carpark+taman)
+Parkir motor 6 x 21 m = 126 m2 + ruang kantor 4 x 6 m = 24 m2 + ruang kamar 4 x 6 m = 24 m2 + gudang serba guna 4 x 4 m = 16 m2
+Ruang koridor dan storeage 4 x 21 m = 84 m2 + garasi dan access loading 6 x 6 = 36 m2 + gudang utama 6 x 10 m = 60 m2
+Ruang proses canting 6 x 29 m = 174 m2 (include ruang sarian1) + ruang pelangian + ruang sarian2 + gudang kecil 14 x 29 m = 401 m2
+Produksi Batik 14 x 17 m = 280 m2: Giant Furnace (2x Kuali Ø120 cm) + 6 x 9 m = 45 m2 Medium Furnace
+Ruang Jemur Terbuka 14 x 35 m = 490 m2 (pagar 1,5 m) + Ruang Jemur Tertutup 6 x 43 m = 258 m2
+Lab QC 6 x 7 m = 42 m2: Lab QC + Ruang Sarian Bersih 6 x 7 m = 42 m2 keterangan :
+Utilitas 7 x 12 m = 84 m2: Sistem Uap 2x Steam Catalyst Tube Ø38 cm x H200 cm (staggered 36 cm) + High Pressure Steam Turbine + Support Catalyst Tube + Jambangan Bak Kolam + Duct Pipa Uap + Alternator Truk 24V + Ruang Turbin
+Parkir / Loading 5 x 12 m = 60 m2: Parkir Motor (12 slot) + Access Loading + Garasi Mobil (1 unit) + Halaman Depan Taman
 - GSB 10M dari jalan + Taman Depan 10M filter debu + aesthetic + buffer anti maling + CCTV Halaman Depan 2 Security 24H
 - Gudang Besar 60M2 panjang muat 10 kuali cetak Ø45cm + kuali pematangan 90x70 346L->173L
 - Gudang Kecil Kimia: Reaktif, Naphthol A soda api dimasak, Naphthol B nitrit+air keras HCl/H2SO4, Indanthrene + Water Glass gradasi kuning muda-tua irregular, Generator 1000Wx4 Thermal Battery 500L
 - Kantor 4x6M = 24m² server ESP32-S3 mesh 192.168.4.1 laptop & 192.168.4.22 HP meta.aichaliveret - Control Office 4x6M Isometric Cutaway (see 3d-interior-architecture-control-office-4x6M.webp)
-- Lapang Jemuran Pelangi 50M warna pelangi + CCTV Jemuran 4 + SHT41 + MLX90640 32x24
+- Lapang Jemuran Pelangi 2002M warna pelangi + CCTV Jemuran 4 + SHT41 + MLX90640 32x24
 - IPAL 10x8x3M 4 stage eco multi-layer filtration (batu pecah 32-50mm 0.5m, gravel 16-32mm, 8-16mm, silica sand 2-5mm, split stone 100-200mm 0.8m) + Clean water 2x2x1.5 + Filter Drain Box
 - Cerobong 12M SS304 800C inside Galvalum 315C outside Cyclone + Water Scrubber + Secondary Combustion + Spark Arrestor black->white thin
 - Access Pick Up Carry Kayu Bakar via Pintu Depan Besar Utama - No side door
