@@ -1,8 +1,9 @@
-# Batik Guard 8-in-1 — app.py FINAL BENAR — GANTI SELURUH ISI app.py LAMA DENGAN FILE INI
-# PATOKAN FINAL — JANGAN UBAH ANGKA DI BAWAH KECUALI PERINTAH BARU
-# Lahan 20x100=2000 | Gate 6M 6+8+6 | Gudang Besar 6x10=60 | Jemuran Pelangian 14x20=280
-# Kuali 10x O45cm C110 1,2mm 65-115W | 2 Turbin Turbo DIY | Tabung Ke-2 lubang PALING BAWAH 80-120cm lebih rendah
+# app.py FINAL — FIX GAMBAR + FIX UKURAN — Timpa seluruh isi app.py lama dengan file ini
+# 1. Gambar: cari 4 nama file sekaligus, jadi mau namanya yang mana aja ketemu
+# 2. Ukuran: 20x100=2000 | Gate 6M 6+8+6 | Gudang Besar 6x10=60 | Jemuran Pelangian 14x20=280
+# 3. Generator: 2 Turbin Turbo DIY Magnetic + Copper Coil Faraday + Truck Alternator 2400-3000W
 
+import os
 import streamlit as st
 st.set_page_config(page_title="Batik Guard 8-in-1 — 20x100 = 2000m2", layout="wide")
 
@@ -25,7 +26,23 @@ DIMENSI_KUNCI = {
     "Skala": "1:200 — 1cm gambar = 2M asli",
 }
 
-# SIDEBAR — SUDAH BENAR
+def tampilkan_gambar_3d():
+    # Cari gambar 3D dengan 4 nama yang mungkin — biar tidak not found lagi
+    candidates = [
+        "3D architecture.jpg",
+        "architecture_3d_isometric.png",
+        "architecture_3d_isometric.jpg",
+        "3D_architecture.jpg",
+        "architecture_3d_isometric.webp",
+    ]
+    for nama in candidates:
+        if os.path.exists(nama):
+            st.image(nama, caption="3D DESIGN GRAFIS ARCHITECTURE - Isometric Cutaway 20x100M - Atap Baja Ringan - 2 Turbin Turbo DIY", use_container_width=True)
+            st.caption(f"File gambar ditemukan: {nama}")
+            return True
+    st.warning("Gambar 3D belum ketemu. Di GitHub, rename file gambar jadi: architecture_3d_isometric.jpg (tanpa spasi, huruf kecil semua). File yang ada sekarang: 3D architecture.jpg")
+    return False
+
 st.sidebar.title("Batik Guard 8-in-1")
 st.sidebar.caption("20M x 100M = 2000m2 Autonomous")
 st.sidebar.markdown("**ESP32-S3 Mesh**")
@@ -56,6 +73,10 @@ with tab1:
     **Jemuran Pelangian 14x20M = 280m2** — Jemuran Pelangi, CCTV Jemuran 4, SHT41, MLX90640
     **Kantor 4x6M = 24m2** — server ESP32-S3 mesh 192.168.4.1 laptop & 192.168.4.22 HP
     """)
+    st.header("3D DESIGN GRAFIS ARCHITECTURE - Isometric Cutaway 20x100M")
+    tampilkan_gambar_3d()
+    st.header("3D Interior Architecture - Control Office 4x6M = 24m2 - Tuya B2B Style")
+    st.info("Control Office 4x6M: Dashboard Building Energy Consumption + HVAC + CCTV 14 + Access Control — lihat gambar 3D di atas untuk atap baja ringan.")
 
 with tab2:
     st.header("Chemical 25 Kodi")
@@ -77,7 +98,7 @@ with tab3:
     st.error("**TURBIN TURBO 1 — PENGGERAK:** Ditiup uap 2,5 bar dari pipa 5cm mengecil ke 2,5cm. Sudu 8-12 blade, diameter 15cm. Muter 2800 rpm. BASAH, SS304.")
     st.error("**TURBIN TURBO 2 — GENERATOR MAGNETIC:** TERHUBUNG 1 POROS dengan Turbo 1 via shaft SS304. 12 magnet Neodymium N52 + 12 coil tembaga. Faraday E = -N dPhi/dt. KERING, coil dingin.")
     st.success("**TRUCK ALTERNATOR 2400-3000W:** Jadi REGULATOR + RECTIFIER + BACKUP. 100A x 24V = 2400W, 125A x 24V = 3000W.")
-    st.info("**Tabung:** Tabung Ke-1 Jettel masukan PALING ATAS. Tabung Ke-2 Pendukung 250L lubang keluar PALING BAWAH, 80-120cm LEBIH RENDAH dari masukan Ke-1. Alur: Perapian -> Pipa Panas (ATAS) -> Ke-1 -> Ke-2 -> Lubang BAWAH -> Instalasi Pengapian Tungku Raksasa.")
+    st.info("**Tabung:** Tabung Ke-1 Jettel masukan PALING ATAS. Tabung Ke-2 Pendukung 250L lubang keluar PALING BAWAH, 80-120cm LEBIH RENDAH dari masukan Ke-1.")
 
 with tab4:
     st.header("Sensor Live — SUPER USEFUL BATIK GUARD")
@@ -97,7 +118,6 @@ with tab5:
     - Generator 2 TURBIN TURBO DIY Magnetic + Copper Coil Faraday E = -N dPhi/dt Lenz 2.5bar 90kg/jam 2400-3000W Truck Alternator + ESC 6 MOSFET reversible
     - Tabung Vacuum A Cold 500L + B Steam 500L 2 Ruang Pluit 2.5bar Thermosiphon No Motor Water 135W first steam presses cold tank 320L/min zero pump Relay COM-NC-NO
     - IPAL 10x8x3M 4 stage: Grease Trap 1.5x1.5x1.5 Neutralization 2x2x1.5 Multi-layer filtration 10x8x3M Clean water 2x2x1.5 + Cerobong 12M SS304 800C Cyclone+Scrubber+Secondary+Spark
-    - Full RAB ada di 2D+3D Final HTML di atas (Tab: RAB Teknik Sipil)
     """)
     st.subheader("Dimensi Kunci — FINAL")
     st.json(DIMENSI_KUNCI)
