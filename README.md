@@ -44,7 +44,7 @@ Pembagian Area:
 Halaman depan 20 x 10 m = 200 m2 (carpark+taman)
 Parkir motor 6 x 21 m = 126 m2 + ruang kantor 4 x 6 m = 24 m2 + ruang kamar 4 x 6 m = 24 m2 + gudang serba guna 4 x 4 m = 16 m2
 Ruang koridor dan storeage 4 x 21 m = 84 m2 + garasi dan access loading 6 x 6 = 36 m2 + gudang utama 6 x 10 m = 60 m2
-Ruang proses canting 6 x 29 m = 174 m2 (include ruang sarian1) + ruang pelangian + ruang sarian2 + gudang kecil 14 x 29 m = 401 m2
+Ruang proses canting 6 x 29 m = 174 m2 (include ruang sarian1) + ruang pelangian + ruang sarian2 + gudang kecil 14 x 29 m = 406 m2
 Produksi Batik 14 x 17 m = 280 m2: Giant Furnace (2x Kuali Ø120 cm) + 6 x 9 m = 45 m2 Medium Furnace
 Ruang Jemur Terbuka 14 x 35 m = 490 m2 (pagar 1,5 m) + Ruang Jemur Tertutup 6 x 43 m = 258 m2
 Lab QC 6 x 7 m = 42 m2: Lab QC + Ruang Sarian Bersih 6 x 7 m = 42 m2 keterangan :
