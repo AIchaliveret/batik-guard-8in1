@@ -1,118 +1,130 @@
-# Batik Guard 8-in-1 — app.py FINAL BENAR — GANTI SELURUH ISI app.py LAMA DENGAN FILE INI
-# PATOKAN FINAL — JANGAN UBAH ANGKA DI BAWAH KECUALI PERINTAH BARU
-# Lahan 20x100=2000 | Gate 6M 6+8+6 | Gudang Besar 6x10=60 | Jemuran Pelangian 14x20=280
-# Kuali 10x O45cm C110 1,2mm 65-115W | 2 Turbin Turbo DIY | Tabung Ke-2 lubang PALING BAWAH 80-120cm lebih rendah
-
 import streamlit as st
-st.set_page_config(page_title="Batik Guard 8-in-1 — 20x100 = 2000m2", layout="wide")
 
-DIMENSI_KUNCI = {
-    "Total Lahan": "20M x 100M = 2000m2",
-    "Lebar x Panjang": "Lebar 20 m x Panjang 100 m",
-    "Gate Utama": "6M tengah [6+8+6]",
-    "GSB": "10M dari jalan",
-    "Taman Depan": "10M filter debu",
-    "Gudang Besar": "6x10M = 60m2",
-    "Kantor": "4x6M = 24m2",
-    "Jemuran Pelangian": "14x20M = 280m2",
-    "IPAL": "10x8x3M",
-    "Cerobong": "12M",
-    "Kuali Cetak": "10x O45cm Tembaga C110 1,2mm + induction 65-115W",
-    "Kuali Pematangan": "90x70cm 346L -> 173L",
-    "Tabung Ke-1 Jettel": "Tekanan Tinggi — masukan pipa air panas perapian PALING ATAS / PALING TINGGI",
-    "Tabung Ke-2 Pendukung": "250 Liter — lubang keluar air residu PALING BAWAH, 80 cm s/d 120 cm LEBIH RENDAH dari masukan Tabung Ke-1",
-    "Turbine + Generator": "2 TURBIN TURBO DIY Magnetic + Copper Coil Faraday E = -N dPhi/dt + Truck Alternator 2400-3000W",
-    "Skala": "1:200 — 1cm gambar = 2M asli",
-}
+st.set_page_config(page_title="IR SUPER BATIK GUARD 8-in-1", layout="wide")
 
-# SIDEBAR — SUDAH BENAR
-st.sidebar.title("Batik Guard 8-in-1")
-st.sidebar.caption("20M x 100M = 2000m2 Autonomous")
-st.sidebar.markdown("**ESP32-S3 Mesh**")
-st.sidebar.success("192.168.4.1 Laptop ✅")
-st.sidebar.success("192.168.4.22 HP ✅")
-st.sidebar.markdown("**Energy**")
-st.sidebar.metric("Tabung A Cold", "58%", "320 L/min")
-st.sidebar.metric("Tabung B Steam", "58%", "2.5 bar")
-st.sidebar.metric("Generator", "2400-3000W", "Truck Alternator 24V")
-st.sidebar.markdown("**14 CCTV**")
-st.sidebar.caption("Cetak 4 | Jemuran 4 | Halaman Depan 2 | Naphthol 2 | Generator+Water Glass 2")
+st.title("IR SUPER BATIK GUARD 8-in-1")
+st.caption("Control Office 4x6M | GSB 10M | GATE 6+8+6 = 20M | TOTAL 2000M2 | 20M x 100M | BATIK GUARD 8-in-1")
+st.markdown("---")
 
-st.title("IR SUPER BATIK GUARD 8-in-1 - Control Office 4x6M")
-st.caption("One Platform for Smarter Batik Buildings | ESP32-S3 Mesh + Model API")
+tab1, tab2, tab3, tab4, tab5, tab6, tab7 = st.tabs([
+    "Floor Plan 1:200",
+    "Chemical",
+    "IPAL",
+    "Safety",
+    "Office",
+    "Control",
+    "Turbine"
+])
 
-tab1, tab2, tab3, tab4, tab5 = st.tabs(["Floor Plan 1:200", "Chemical 25 Kodi", "Kuali & 2 Turbin Turbo", "Sensor Live", "Model API + RAB"])
-
+# ================= TAB 1 - FLOOR PLAN - HANYA 2D + 3D, TIDAK ADA GAMBAR KANTOR DI SINI =================
 with tab1:
-    st.header("FLOOR PLAN 1:200 - 20M x 100M = 2000M2 - Ruler Every Side")
-    st.success("DENAH 2D + 3D DESIGN GRAFIS ARCHITECTURE + RAB TEKNIK SIPIL - FINAL SYSTEM")
-    st.success("PATOKAN FINAL — 20x100 = 2000m2 — Gate 6M 6+8+6 — Gudang Besar 6x10M = 60m2 — Jemuran Pelangian 14x20M = 280m2")
-    st.subheader("Dimensi Kunci — FINAL")
-    st.json(DIMENSI_KUNCI)
-    st.markdown("""
-    **Gate 6M 6+8+6** — Pintu Depan Besar Utama • Access Pick Up Kayu Bakar
-    **GSB 10M + Taman Depan 10M** — filter debu + aesthetic + buffer anti maling + CCTV Halaman Depan 2 Security 24H
-    **Gudang Besar 6x10M = 60m2** — muat 10 Kuali Cetak O45cm + Kuali Pematangan 90x70 346L -> 173L
-    **Jemuran Pelangian 14x20M = 280m2** — Jemuran Pelangi, CCTV Jemuran 4, SHT41, MLX90640
-    **Kantor 4x6M = 24m2** — server ESP32-S3 mesh 192.168.4.1 laptop & 192.168.4.22 HP
-    """)
-st.subheader("Gambar 2D — Denah Top View")
-try:
-    st.image("denah-pabrik-batik-guard-20x100.png", caption="Denah 2D — 20 x 100 = 2000 m2", use_container_width=True)
-except:
-    st.warning("File 2D denah-pabrik-batik-guard-20x100.png belum ketemu")
+    st.header("FLOOR PLAN 1:200 - 20M x 100M = 2000M2")
 
-st.subheader("Gambar 3D — Isometrik Pabrik")
-try:
-    st.image("architecture_3d_isometric.png", caption="Desain 3D Isometrik — Pabrik Batik Guard", use_container_width=True)
-except:
-    st.warning("File 3D architecture_3d_isometric.png belum ketemu")
+    st.markdown("""
+    ### DIMENSI KUNCI — FINAL
+    - **GATE:** 6M + 8M + 6M = 20M (full lebar tanah)
+    - **GSB:** 10M
+    - **TOTAL:** 20M x 100M = 2000M2
+    - **GUDANG BESAR:** 6x10M = 60M2
+    - **KANTOR:** 4x6M = 24M2
+    - **JEMURAN PELANGIAN:** 14x20M = 280M2
+    - **UTILITAS:** 7x12M = 84M2
+    - **IPAL:** 10x8x3M
+    - **CEROBONG:** 12M
+    """)
+
+    st.markdown("""
+    ### SEGMENT — TOTAL 2000M2 (tidak ditambah lagi, sub-room sudah di dalam segment)
+    - **Halaman Depan:** 20x10 = 200M2
+    - **Zona Depan:** 20x21 = 420M2
+    - **Zona Proses:** 20x29 = 580M2
+    - **Produksi + Utilitas:** 20x17 = 340M2
+    - **Jemur + Lab:** 20x23 = 460M2
+    - **TOTAL:** 200 + 420 + 580 + 340 + 460 = **2000M2**
+    """)
+
+    # --- GAMBAR 1 - 2D DULU ---
+    st.subheader("Gambar 2D — Denah Top View")
+    try:
+        st.image("denah-pabrik-batik-guard-20x100.png", caption="Denah 2D — 20 x 100 = 2000 m2", use_container_width=True)
+    except:
+        st.warning("File 2D denah-pabrik-batik-guard-20x100.png belum ketemu")
+
+    # --- GAMBAR 2 - 3D SESUDAH 2D ---
+    st.subheader("Gambar 3D — Isometrik Pabrik")
+    try:
+        st.image("architecture_3d_isometric.png", caption="Desain 3D Isometrik — Pabrik Batik Guard", use_container_width=True)
+    except:
+        st.warning("File 3D architecture_3d_isometric.png belum ketemu")
+
+    st.markdown("""
+    ### CATATAN YANG MENGIKAT
+    - Ukuran yang dipakai adalah 20 x 100 = 2000 m2, bukan 20 x 110.
+    - Gate 6+8+6 = 20 m, GSB 10 m.
+    - Semua sub-room sudah masuk di dalam segment, jangan ditambah lagi.
+    """)
+
+# ================= TAB 2 - CHEMICAL =================
 with tab2:
-    st.header("Chemical 25 Kodi")
+    st.header("Chemical — Batik Guard")
     st.markdown("""
-    **Total 6kg Naphthol, 6L NaOH, 3kg NaNO2, 8L HCl, 10kg Garam Diazo**
-    - Naphthol AS series + Fast Red B / Blue BB / Scarlet RC / Yellow GC / Bordeaux GP / Black K / Blue B / Red B / Green B / Orange GC
-    - Reactive: Yellow, Scarlet, Navy, Red Velvet, Green + Water Glass gradasi kuning muda-tua irregular
-    - Lorodan: Soda Ash 30-50gr/L 90-100C
-    - **Lilin Reform:** Parafin 60% 52-56C -> 40% reform, Micro 20% -> 35%, Gondorukem Siongkha 15% -> 15%, Beeswax 5% -> 10%. Melting 65-68C
+    - **Area Chemical:** di Zona Proses, dekat Produksi
+    - **Penyimpanan:** rak tertutup, ventilasi, jauh dari tungku
+    - **SOP:** pakai APD, timbangan, label, MSDS
+    - **Sensor:** IR + suhu + gas, alarm kalau bocor
     """)
 
+# ================= TAB 3 - IPAL =================
 with tab3:
-    st.header("Kuali & 2 TURBIN TURBO DIY — Magnetic + Copper Coil Faraday")
+    st.header("IPAL — 10x8x3M")
     st.markdown("""
-    **Kuali Cetak: 10x O45cm Tembaga C110 1,2mm + induction 65-115W** — 60-120C adjustable, 20k flip/sec eddy current
-    **Kuali Pematangan: 90x70cm — 346L -> 173L** — 8 jam api besar susut 50%, water 40% -> 0% like foam rubber
+    - **Ukuran IPAL:** 10 x 8 x 3 M
+    - **Fungsi:** olah air limbah batik sebelum dibuang
+    - **Alur:** Bak Ekualisasi > Koagulasi > Sedimentasi > Filter > Air Bersih
+    - **Target Air:** pH 6-8, TDS 50-70 — sesuai observasi Mineral Sehat
     """)
-    st.subheader("Kenapa 2 Turbin Turbo DIY? Karena Francis pabrikan minimal 5 MW, tidak ada yang 2400-3000W")
-    st.error("**TURBIN TURBO 1 — PENGGERAK:** Ditiup uap 2,5 bar dari pipa 5cm mengecil ke 2,5cm. Sudu 8-12 blade, diameter 15cm. Muter 2800 rpm. BASAH, SS304.")
-    st.error("**TURBIN TURBO 2 — GENERATOR MAGNETIC:** TERHUBUNG 1 POROS dengan Turbo 1 via shaft SS304. 12 magnet Neodymium N52 + 12 coil tembaga. Faraday E = -N dPhi/dt. KERING, coil dingin.")
-    st.success("**TRUCK ALTERNATOR 2400-3000W:** Jadi REGULATOR + RECTIFIER + BACKUP. 100A x 24V = 2400W, 125A x 24V = 3000W.")
-    st.info("**Tabung:** Tabung Ke-1 Jettel masukan PALING ATAS. Tabung Ke-2 Pendukung 250L lubang keluar PALING BAWAH, 80-120cm LEBIH RENDAH dari masukan Ke-1. Alur: Perapian -> Pipa Panas (ATAS) -> Ke-1 -> Ke-2 -> Lubang BAWAH -> Instalasi Pengapian Tungku Raksasa.")
 
+# ================= TAB 4 - SAFETY =================
 with tab4:
-    st.header("Sensor Live — SUPER USEFUL BATIK GUARD")
-    c1,c2,c3,c4 = st.columns(4)
-    c1.metric("SHT41 Suhu", "28.4°C", "Normal")
-    c2.metric("NDIR CO2", "412 ppm", "4-ch safe")
-    c3.metric("MQ-135 NOx", "12.0 ppm", "Normal")
-    c4.metric("HX711 5kg", "2.45 kg", "0.1gr precision")
-    st.caption("ESP32-S3 + SHT41 + HX711 + IMX219 • 18650 Double • IP65 M12 gland • 8 items")
-
-with tab5:
-    st.header("RAB Teknik Sipil - Quick View — SUDAH BENAR")
+    st.header("Safety — Batik Guard 8-in-1")
     st.markdown("""
-    **RAB Pabrik Batik 2000m2 Final - Piping Galvalum Mix Stainless 94M + Orange SS304 800C**
-    - Site 20x100M + Tungku 2 besar + 2 sedang + 2 kayu bakar
-    - Kuali 500-1000L O1.2M + 10x O45cm tembaga C110 1,2mm + Pematangan 90x70 346L->173L foam rubber 8h big fire water 40%->0%
-    - Generator 2 TURBIN TURBO DIY Magnetic + Copper Coil Faraday E = -N dPhi/dt Lenz 2.5bar 90kg/jam 2400-3000W Truck Alternator + ESC 6 MOSFET reversible
-    - Tabung Vacuum A Cold 500L + B Steam 500L 2 Ruang Pluit 2.5bar Thermosiphon No Motor Water 135W first steam presses cold tank 320L/min zero pump Relay COM-NC-NO
-    - IPAL 10x8x3M 4 stage: Grease Trap 1.5x1.5x1.5 Neutralization 2x2x1.5 Multi-layer filtration 10x8x3M Clean water 2x2x1.5 + Cerobong 12M SS304 800C Cyclone+Scrubber+Secondary+Spark
-    - Full RAB ada di 2D+3D Final HTML di atas (Tab: RAB Teknik Sipil)
+    - **8-in-1:** IR, Suhu, Gas, Api, CCTV, Akses, HVAC, Chemical
+    - **Listrik:** AC dan DC dipisah, MCB 6A, RCD 30mA, ATS, Charge Controller, Baterai 24V, Inverter
+    - **Jalur Evakuasi:** Gate 6+8+6 = 20M, bebas hambatan
+    - **APAR + Hydrant:** di setiap zona
     """)
-    st.subheader("Dimensi Kunci — FINAL")
-    st.json(DIMENSI_KUNCI)
-    st.header("Model API — Untuk Juri")
-    st.code('"We use Model API to analyze batik color Delta E from IMX219 5500K + TCS34725 sticks, predict pematangan 346L->173L foam rubber phase via MLX90640 + SHT41, optimize 2.5 bar steam + 2400-3000W generator scheduling, and auto-generate IPAL compliance logs. Fully local ESP32-S3 mesh, no LiFePO4, safe for batik artisan."', language="text")
 
-st.divider()
-st.caption("Kitab Komplit Batik Clearance • 20x100 = 2000m2 • 1:200 • 192.168.4.1 / 192.168.4.22 • ESP32-S3 Mesh")
+# ================= TAB 5 - OFFICE - GAMBAR KANTOR HANYA DI SINI, TIDAK DI TAB FLOOR PLAN =================
+with tab5:
+    st.header("Office — Control Office 4x6M")
+    st.markdown("""
+    - **Ukuran Kantor:** 4 x 6 M = 24M2
+    - **Fungsi:** Control Office, monitoring CCTV, HVAC, Chemical, Lighting
+    - **Posisi:** di Zona Depan, dekat Gate, mudah kontrol keluar-masuk
+    """)
+    st.subheader("Gambar Kantor — Interior Control Office")
+    try:
+        st.image("interior_control_office_4x6m.png", caption="Interior Control Office 4x6M", use_container_width=True)
+    except:
+        st.warning("File interior_control_office_4x6m.png belum ketemu")
+
+# ================= TAB 6 - CONTROL =================
+with tab6:
+    st.header("Control — Monitoring")
+    st.markdown("""
+    - **Dashboard:** Suhu, IR, CCTV, HVAC, Lighting, Akses, Chemical
+    - **Mode:** Otomatis + Manual, alarm kalau suhu / gas naik
+    - **Data:** disimpan untuk SOP, OEE, ERP, KPI — Lembar Hijau
+    """)
+
+# ================= TAB 7 - TURBINE =================
+with tab7:
+    st.header("Turbine — Steam to Listrik")
+    st.markdown("""
+    - **4 Tungku:** 2 Medium untuk air panas, 2 Giant (Giant 1 backup air panas / bantu turbin, Giant 2 ke turbin)
+    - **Alur:** Uap langsung > Turbo Turbine > Alternator Truk 24V 100A
+    - **Target:** 1500-2000W stabil, maks 2400W DC
+    - **Listrik:** Alternator > MCB > Charge Controller > Baterai 24V > Inverter > Lampu, Dispenser, Sensor, Cas HP
+    - **PLN:** hanya untuk pompa air tanah / satelit + kompor listrik, tidak dicampur dengan DC
+    - **Tanpa:** tanpa pompa motor air, tanpa mesin Beat, tanpa campur AC/DC langsung
+    """)
