@@ -4,7 +4,7 @@ Folder: `docs/arsitektur/` • Repo: `AIchaliveret/batik-guard-8in1`
 
 ## Deskripsi
 
-Denah lantai arsitektur Pabrik Batik Guard versi submission Hackathon. Denah ini merupakan tampilan atas (top view) blueprint skala 1:100 untuk pabrik batik 20 m x 100 m = 2000 m2.
+Denah lantai arsitektur Pabrik Batik Guard versi submission Hackathon. Denah ini merupakan tampilan atas (top view) blueprint skala 1:200 dimana 3 cm = 2m untuk pabrik batik 20 m x 100 m = 2000 m2.
 
 ## File dalam Folder Ini
 
