@@ -56,7 +56,17 @@ with tab1:
     **Jemuran Pelangian 14x20M = 280m2** — Jemuran Pelangi, CCTV Jemuran 4, SHT41, MLX90640
     **Kantor 4x6M = 24m2** — server ESP32-S3 mesh 192.168.4.1 laptop & 192.168.4.22 HP
     """)
+st.subheader("Gambar 2D — Denah Top View")
+try:
+    st.image("denah-pabrik-batik-guard-20x100.png", caption="Denah 2D — 20 x 100 = 2000 m2", use_container_width=True)
+except:
+    st.warning("File 2D denah-pabrik-batik-guard-20x100.png belum ketemu")
 
+st.subheader("Gambar 3D — Isometrik Pabrik")
+try:
+    st.image("architecture_3d_isometric.png", caption="Desain 3D Isometrik — Pabrik Batik Guard", use_container_width=True)
+except:
+    st.warning("File 3D architecture_3d_isometric.png belum ketemu")
 with tab2:
     st.header("Chemical 25 Kodi")
     st.markdown("""
